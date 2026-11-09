@@ -1,0 +1,21 @@
+\begin{tabular}{lrr}
+\toprule
+phase & A3 & U5 \\
+\midrule
+momentum predictor (assembly, ILU(0), BiCGSTAB) & 203 & 66 \\
+pressure (assembly, AMG setup, CG) & 317 & 191 \\
+AMR on the critical path & 213 & 0 \\
+\quad indicators + download & 9 &  \\
+\quad upload & 8 &  \\
+\quad ILU colouring & 15 &  \\
+\quad re-projection AMG setup & 104 &  \\
+\quad re-projection solve & 66 &  \\
+\quad overlap: transfer & 9 &  \\
+\quad overlap: join wait & 0 &  \\
+other (forces, statistics, output) & 3 & 2 \\
+\textbf{wall time} & 736 & 259 \\
+\midrule
+host remesh in the worker thread (hidden) & 216 & \\
+mean BiCGSTAB / CG iterations per step & 28 / 38 & 14 / 31 \\
+\bottomrule
+\end{tabular}

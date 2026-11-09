@@ -1,0 +1,31 @@
+========================================================================
+  CUDA 2D FEM + AMR Incompressible Navier-Stokes Cylinder Flow Solver
+  Domain: [0, 2.2] x [0, 0.41] m | Cylinder: (0.2, 0.2), R = 0.05 m
+  Re = 100 | dt = 0.001 s | Steps = 100 | AMR Interval = 0 (Max Level = 4)
+  AMR: NVB refine+coarsen | tol vorticity 0.1 m/s, interpolation 0.01 m/s | coarsen below 0.35 x tol | look-ahead 0 s | buffer 1 | element budget 200000 | remesh overlapped by 5 steps
+  Time scheme: BDF2 | pressure update: rotational incremental projection | host threads 8
+  Solvers: momentum BiCGSTAB + multicolour ILU(0) | pressure CG + SA-AMG
+========================================================================
+[Init] Base Unstructured Mesh: 508 nodes, 896 triangles, 3316 CSR nonzeros, min angle 15.29 deg.
+  --> [AMR uniform] marked refine 0 / coarsen 0 | bisections 13440 (+0 closure) | removed vertices 0
+      mesh: 7408 nodes, 14336 elements (896 -> 14336), CSR nnz = 50896 | max level 2 | min angle 15.22 deg | adapt 0.0 ms
+[Step     1 | t = 0.0010 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,28) | C_D = -0.1569 | C_L = 0.6717 | dP = -0.0774
+[Step    10 | t = 0.0100 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,29) | C_D = -0.0350 | C_L = 0.5689 | dP = -0.0189
+[Step    20 | t = 0.0200 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,28) | C_D = 0.0021 | C_L = 0.6174 | dP = -0.0210
+[Step    30 | t = 0.0300 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,29) | C_D = 0.0452 | C_L = 0.6427 | dP = -0.0225
+[Step    40 | t = 0.0400 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,30) | C_D = 0.0883 | C_L = 0.6401 | dP = -0.0233
+[Step    50 | t = 0.0500 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,4,31) | C_D = 0.1260 | C_L = 0.6081 | dP = -0.0231
+[Step    60 | t = 0.0600 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,27) | C_D = 0.1540 | C_L = 0.5493 | dP = -0.0221
+[Step    70 | t = 0.0700 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,27) | C_D = 0.1700 | C_L = 0.4701 | dP = -0.0202
+[Step    80 | t = 0.0800 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,27) | C_D = 0.1740 | C_L = 0.3798 | dP = -0.0178
+[Step    90 | t = 0.0900 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,27) | C_D = 0.1671 | C_L = 0.2895 | dP = -0.0151
+[Step   100 | t = 0.1000 s] Nodes:   7408 | Elems:  14336 | Iters(u,v,p): (3,3,25) | C_D = 0.1515 | C_L = 0.2098 | dP = -0.0124
+[MMS] t = 1.000000e-01 | nodes 7408 | h_max 2.361327e-02 | dt 1.000000e-03
+[MMS] ||u-u_h||_L2 = 4.221009e-03 (rel 5.158391e-03) | |u-u_h|_H1 = 5.984581e-01 (rel 6.172028e-02) | ||p-p_h||_L2 = 4.445471e-03 (rel 1.893574e-02)
+[MMS] max |p-p_h| on cylinder nodes = 8.213798e-03 | at the DFG probes = 6.742818e-03
+[Timing] 0.32 s wall, 0.00 s in AMR (incl. transfer) | PPE AMG setup 0.01 s | AMG remaps 0 | non-converged linear solves: 0
+[Timing] step phases: momentum 0.06 s (ILU colouring 0.00 s, 5 colours at the end) | pressure 0.25 s (assembly, AMG setup, CG)
+[Timing] AMR sub-phases: adjacency 0.00 s; traces 0.00 s; trace merge 0.00 s; leaf collect 0.00 s; morton keys 0.00 s; morton sort 0.00 s; vertex compaction 0.00 s; mesh fill 0.00 s;
+[Timing] AMG setup phases (all setups): download 0.00 s; D^-1 + rho 0.00 s; aggregation 0.00 s; P smoothing 0.00 s; transpose 0.00 s; Galerkin product 0.00 s; upload 0.00 s; coarse inverse 0.00 s; remap 0.00 s;
+[Output] Wrote ParaView unstructured mesh & flow field to: cylinder_fem_amr_final.vtk
+[Output] Wrote force history to: cylinder_fem_amr_forces.csv

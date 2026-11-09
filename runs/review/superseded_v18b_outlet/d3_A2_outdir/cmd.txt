@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v18b_review --case 2d3 --steps 8000 --amr-tol-vort 0.05 --amr-tol-interp 0.005 --max-level 5 --max-elems 400000 --min-level 2 --outlet dirichlet

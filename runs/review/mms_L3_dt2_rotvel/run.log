@@ -1,0 +1,61 @@
+========================================================================
+  CUDA 2D FEM + AMR Incompressible Navier-Stokes Cylinder Flow Solver
+  Domain: [0, 2.2] x [0, 0.41] m | Cylinder: (0.2, 0.2), R = 0.05 m
+  Re = 100 | dt = 0.00025 s | Steps = 400 | AMR Interval = 0 (Max Level = 4)
+  AMR: NVB refine+coarsen | tol vorticity 0.1 m/s, interpolation 0.01 m/s | coarsen below 0.35 x tol | look-ahead 0 s | buffer 1 | element budget 200000 | remesh overlapped by 5 steps
+  Time scheme: BDF2 | pressure update: rotational incremental projection | host threads 8
+  Solvers: momentum BiCGSTAB + multicolour ILU(0) | pressure CG + SA-AMG
+========================================================================
+[Init] Base Unstructured Mesh: 508 nodes, 896 triangles, 3316 CSR nonzeros, min angle 15.29 deg.
+  --> [AMR uniform] marked refine 0 / coarsen 0 | bisections 56448 (+0 closure) | removed vertices 0
+      mesh: 29152 nodes, 57344 elements (896 -> 57344), CSR nnz = 202144 | max level 3 | min angle 15.21 deg | adapt 0.0 ms
+[Step     1 | t = 0.0003 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,38) | C_D = -0.1601 | C_L = 0.5176 | dP = -0.0865
+[Step    10 | t = 0.0025 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,34) | C_D = -0.0427 | C_L = 0.3810 | dP = -0.0149
+[Step    20 | t = 0.0050 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,30) | C_D = -0.0402 | C_L = 0.3939 | dP = -0.0154
+[Step    30 | t = 0.0075 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,30) | C_D = -0.0373 | C_L = 0.4064 | dP = -0.0160
+[Step    40 | t = 0.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,31) | C_D = -0.0340 | C_L = 0.4184 | dP = -0.0165
+[Step    50 | t = 0.0125 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,31) | C_D = -0.0304 | C_L = 0.4298 | dP = -0.0170
+[Step    60 | t = 0.0150 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = -0.0265 | C_L = 0.4405 | dP = -0.0175
+[Step    70 | t = 0.0175 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = -0.0223 | C_L = 0.4504 | dP = -0.0180
+[Step    80 | t = 0.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = -0.0179 | C_L = 0.4594 | dP = -0.0184
+[Step    90 | t = 0.0225 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = -0.0132 | C_L = 0.4675 | dP = -0.0189
+[Step   100 | t = 0.0250 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = -0.0084 | C_L = 0.4746 | dP = -0.0193
+[Step   110 | t = 0.0275 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = -0.0034 | C_L = 0.4806 | dP = -0.0196
+[Step   120 | t = 0.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0016 | C_L = 0.4856 | dP = -0.0200
+[Step   130 | t = 0.0325 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0066 | C_L = 0.4893 | dP = -0.0202
+[Step   140 | t = 0.0350 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0117 | C_L = 0.4919 | dP = -0.0205
+[Step   150 | t = 0.0375 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0167 | C_L = 0.4932 | dP = -0.0207
+[Step   160 | t = 0.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = 0.0216 | C_L = 0.4933 | dP = -0.0209
+[Step   170 | t = 0.0425 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = 0.0263 | C_L = 0.4921 | dP = -0.0210
+[Step   180 | t = 0.0450 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = 0.0309 | C_L = 0.4897 | dP = -0.0211
+[Step   190 | t = 0.0475 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = 0.0353 | C_L = 0.4859 | dP = -0.0211
+[Step   200 | t = 0.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,29) | C_D = 0.0394 | C_L = 0.4810 | dP = -0.0211
+[Step   210 | t = 0.0525 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0433 | C_L = 0.4748 | dP = -0.0210
+[Step   220 | t = 0.0550 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0469 | C_L = 0.4675 | dP = -0.0209
+[Step   230 | t = 0.0575 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0502 | C_L = 0.4590 | dP = -0.0208
+[Step   240 | t = 0.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0532 | C_L = 0.4495 | dP = -0.0206
+[Step   250 | t = 0.0625 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0558 | C_L = 0.4390 | dP = -0.0203
+[Step   260 | t = 0.0650 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0581 | C_L = 0.4276 | dP = -0.0201
+[Step   270 | t = 0.0675 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0601 | C_L = 0.4153 | dP = -0.0198
+[Step   280 | t = 0.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0617 | C_L = 0.4023 | dP = -0.0194
+[Step   290 | t = 0.0725 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0630 | C_L = 0.3886 | dP = -0.0190
+[Step   300 | t = 0.0750 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0639 | C_L = 0.3744 | dP = -0.0186
+[Step   310 | t = 0.0775 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0646 | C_L = 0.3597 | dP = -0.0182
+[Step   320 | t = 0.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0649 | C_L = 0.3447 | dP = -0.0177
+[Step   330 | t = 0.0825 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0649 | C_L = 0.3295 | dP = -0.0172
+[Step   340 | t = 0.0850 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0646 | C_L = 0.3142 | dP = -0.0167
+[Step   350 | t = 0.0875 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,30) | C_D = 0.0641 | C_L = 0.2988 | dP = -0.0161
+[Step   360 | t = 0.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0633 | C_L = 0.2836 | dP = -0.0156
+[Step   370 | t = 0.0925 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0622 | C_L = 0.2686 | dP = -0.0150
+[Step   380 | t = 0.0950 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0610 | C_L = 0.2538 | dP = -0.0145
+[Step   390 | t = 0.0975 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,29) | C_D = 0.0595 | C_L = 0.2395 | dP = -0.0139
+[Step   400 | t = 0.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,28) | C_D = 0.0578 | C_L = 0.2257 | dP = -0.0134
+[MMS] t = 1.000000e-01 | nodes 29152 | h_max 1.180664e-02 | dt 2.500000e-04
+[MMS] ||u-u_h||_L2 = 5.075943e-03 (rel 6.203195e-03) | |u-u_h|_H1 = 3.179864e-01 (rel 3.279473e-02) | ||p-p_h||_L2 = 8.562706e-02 (rel 3.647333e-01)
+[MMS] max |p-p_h| on cylinder nodes = 9.052772e-02 | at the DFG probes = 9.019918e-02
+[Timing] 1.78 s wall, 0.00 s in AMR (incl. transfer) | PPE AMG setup 0.05 s | AMG remaps 0 | non-converged linear solves: 0
+[Timing] step phases: momentum 0.29 s (ILU colouring 0.00 s, 4 colours at the end) | pressure 1.46 s (assembly, AMG setup, CG)
+[Timing] AMR sub-phases: adjacency 0.00 s; traces 0.00 s; trace merge 0.00 s; leaf collect 0.00 s; morton keys 0.00 s; morton sort 0.00 s; vertex compaction 0.00 s; mesh fill 0.00 s;
+[Timing] AMG setup phases (all setups): download 0.00 s; D^-1 + rho 0.01 s; aggregation 0.00 s; P smoothing 0.01 s; transpose 0.00 s; Galerkin product 0.01 s; upload 0.00 s; coarse inverse 0.00 s; remap 0.00 s;
+[Output] Wrote ParaView unstructured mesh & flow field to: cylinder_fem_amr_final.vtk
+[Output] Wrote force history to: cylinder_fem_amr_forces.csv

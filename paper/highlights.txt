@@ -1,0 +1,7 @@
+Highlights (Computers & Mathematics with Applications; 3-5 bullets, max. 85 characters each)
+
+- Remesh force spikes are set by the re-projection operator, not the BDF2 history
+- Stabilised re-projection avoids the 300-400x drag spikes of an unstabilised one
+- This re-projection is near the identity on an unchanged mesh, but not exactly
+- Keeping the stabilised divergence in the rotational term grows the pressure error
+- Adaptivity lowers the error per node at the coarse end but not the GPU wall time

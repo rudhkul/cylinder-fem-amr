@@ -1,0 +1,403 @@
+% refs.bib -- GPU P1-P1 FEM Navier--Stokes solver with dynamic NVB AMR (DFG 2D-2 / 2D-3)
+% Every entry checked 2026-11-09 against Crossref (api.crossref.org/works/<doi>),
+% arXiv (export.arxiv.org) or the FEATFLOW web page itself.
+
+% ---------------------------------------------------------------- benchmark
+@incollection{schaefer1996,
+  author    = {Sch{\"a}fer, M. and Turek, S. and Durst, F. and Krause, E. and Rannacher, R.},
+  title     = {Benchmark Computations of Laminar Flow Around a Cylinder},
+  booktitle = {Flow Simulation with High-Performance Computers {II}},
+  editor    = {Hirschel, Ernst Heinrich},
+  series    = {Notes on Numerical Fluid Mechanics},
+  volume    = {52},
+  pages     = {547--566},
+  publisher = {Vieweg+Teubner Verlag},
+  address   = {Wiesbaden},
+  year      = {1996},
+  doi       = {10.1007/978-3-322-89849-4_39}
+}
+
+@article{john2004,
+  author  = {John, Volker},
+  title   = {Reference values for drag and lift of a two-dimensional time-dependent flow around a cylinder},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {44},
+  number  = {7},
+  pages   = {777--788},
+  year    = {2004},
+  doi     = {10.1002/fld.679}
+}
+
+@misc{featflow,
+  author       = {{FEATFLOW group, TU Dortmund}},
+  title        = {{DFG} benchmark {2D-2} (flow around a cylinder, {Re} = 100, periodic): reference data
+                  ({Q2/P1disc}, level 6, finest time step; data set 20141124\_dfg\_bench2\_official)},
+  howpublished = {\url{https://wwwold.mathematik.tu-dortmund.de/~featflow/en/benchmarks/cfdbenchmarking/flow/dfg_benchmark2_re100.html}},
+  year         = {2014},
+  note         = {Accessed 9 November 2026}
+}
+
+@article{johnmatthies2001,
+  author  = {John, Volker and Matthies, Gunar},
+  title   = {Higher-order finite element discretizations in a benchmark problem for incompressible flows},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {37},
+  number  = {8},
+  pages   = {885--903},
+  year    = {2001},
+  doi     = {10.1002/fld.195}
+}
+
+% ---------------------------------------------------------------- projection / stabilisation
+@article{codina2001,
+  author  = {Codina, Ramon},
+  title   = {Pressure stability in fractional step finite element methods for incompressible flows},
+  journal = {Journal of Computational Physics},
+  volume  = {170},
+  number  = {1},
+  pages   = {112--140},
+  year    = {2001},
+  doi     = {10.1006/jcph.2001.6725}
+}
+
+@article{codina2000oss,
+  author  = {Codina, Ramon},
+  title   = {Stabilization of incompressibility and convection through orthogonal sub-scales in finite element methods},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {190},
+  number  = {13--14},
+  pages   = {1579--1599},
+  year    = {2000},
+  doi     = {10.1016/S0045-7825(00)00254-1}
+}
+
+@article{guermond2006,
+  author  = {Guermond, J. L. and Minev, P. and Shen, Jie},
+  title   = {An overview of projection methods for incompressible flows},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {195},
+  number  = {44--47},
+  pages   = {6011--6045},
+  year    = {2006},
+  doi     = {10.1016/j.cma.2005.10.010}
+}
+
+@article{timmermans1996,
+  author  = {Timmermans, L. J. P. and Minev, P. D. and {Van De Vosse}, F. N.},
+  title   = {An approximate projection scheme for incompressible flow using spectral elements},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {22},
+  number  = {7},
+  pages   = {673--688},
+  year    = {1996},
+  doi     = {10.1002/(SICI)1097-0363(19960415)22:7<673::AID-FLD373>3.0.CO;2-O}
+}
+
+@article{brooks1982,
+  author  = {Brooks, Alexander N. and Hughes, Thomas J. R.},
+  title   = {Streamline upwind/{Petrov--Galerkin} formulations for convection dominated flows with particular emphasis on the incompressible {Navier--Stokes} equations},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {32},
+  number  = {1--3},
+  pages   = {199--259},
+  year    = {1982},
+  doi     = {10.1016/0045-7825(82)90071-8}
+}
+
+@article{tezduyar2000,
+  author  = {Tezduyar, Tayfun E. and Osawa, Yasuo},
+  title   = {Finite element stabilization parameters computed from element matrices and vectors},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {190},
+  number  = {3--4},
+  pages   = {411--430},
+  year    = {2000},
+  doi     = {10.1016/S0045-7825(00)00211-5}
+}
+
+@article{bochev2004,
+  author  = {Bochev, Pavel B. and Gunzburger, Max D. and Shadid, John N.},
+  title   = {Stability of the {SUPG} finite element method for transient advection--diffusion problems},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {193},
+  number  = {23--26},
+  pages   = {2301--2323},
+  year    = {2004},
+  doi     = {10.1016/j.cma.2004.01.026}
+}
+
+@book{skew,
+  author    = {Layton, William},
+  title     = {Introduction to the Numerical Analysis of Incompressible Viscous Flows},
+  series    = {Computational Science and Engineering},
+  publisher = {SIAM},
+  address   = {Philadelphia},
+  year      = {2008},
+  isbn      = {978-0-89871-657-3},
+  doi       = {10.1137/1.9780898718904}
+}
+
+% ---------------------------------------------------------------- adaptivity
+@article{stevenson2008,
+  author  = {Stevenson, Rob},
+  title   = {The completion of locally refined simplicial partitions created by bisection},
+  journal = {Mathematics of Computation},
+  volume  = {77},
+  number  = {261},
+  pages   = {227--241},
+  year    = {2008},
+  doi     = {10.1090/S0025-5718-07-01959-X}
+}
+
+@article{binev2004,
+  author  = {Binev, Peter and Dahmen, Wolfgang and DeVore, Ron},
+  title   = {Adaptive finite element methods with convergence rates},
+  journal = {Numerische Mathematik},
+  volume  = {97},
+  number  = {2},
+  pages   = {219--268},
+  year    = {2004},
+  doi     = {10.1007/s00211-003-0492-7}
+}
+
+@article{mitchell1989,
+  author  = {Mitchell, William F.},
+  title   = {A comparison of adaptive refinement techniques for elliptic problems},
+  journal = {ACM Transactions on Mathematical Software},
+  volume  = {15},
+  number  = {4},
+  pages   = {326--347},
+  year    = {1989},
+  doi     = {10.1145/76909.76912}
+}
+
+@article{zienkiewicz1987,
+  author  = {Zienkiewicz, O. C. and Zhu, J. Z.},
+  title   = {A simple error estimator and adaptive procedure for practical engineering analysis},
+  journal = {International Journal for Numerical Methods in Engineering},
+  volume  = {24},
+  number  = {2},
+  pages   = {337--357},
+  year    = {1987},
+  doi     = {10.1002/nme.1620240206}
+}
+
+@article{zienkiewicz1992,
+  author  = {Zienkiewicz, O. C. and Zhu, J. Z.},
+  title   = {The superconvergent patch recovery and a posteriori error estimates. {Part} 1: {The} recovery technique},
+  journal = {International Journal for Numerical Methods in Engineering},
+  volume  = {33},
+  number  = {7},
+  pages   = {1331--1364},
+  year    = {1992},
+  doi     = {10.1002/nme.1620330702}
+}
+
+@article{besier2012,
+  author  = {Besier, Michael and Rannacher, Rolf},
+  title   = {Goal-oriented space--time adaptivity in the finite element {Galerkin} method for the computation of nonstationary incompressible flow},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {70},
+  number  = {9},
+  pages   = {1139--1166},
+  year    = {2012},
+  doi     = {10.1002/fld.2735}
+}
+
+@article{becker2001,
+  author  = {Becker, Roland and Rannacher, Rolf},
+  title   = {An optimal control approach to a posteriori error estimation in finite element methods},
+  journal = {Acta Numerica},
+  volume  = {10},
+  pages   = {1--102},
+  year    = {2001},
+  doi     = {10.1017/S0962492901000010}
+}
+
+@article{fidkowski2011,
+  author  = {Fidkowski, Krzysztof J. and Darmofal, David L.},
+  title   = {Review of output-based error estimation and mesh adaptation in computational fluid dynamics},
+  journal = {AIAA Journal},
+  volume  = {49},
+  number  = {4},
+  pages   = {673--694},
+  year    = {2011},
+  doi     = {10.2514/1.J050073}
+}
+
+% ---------------------------------------------------------------- linear algebra
+@article{vanek1996,
+  author  = {Van{\v{e}}k, P. and Mandel, J. and Brezina, M.},
+  title   = {Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems},
+  journal = {Computing},
+  volume  = {56},
+  number  = {3},
+  pages   = {179--196},
+  year    = {1996},
+  doi     = {10.1007/BF02238511}
+}
+
+@article{vandervorst1992,
+  author  = {{van der Vorst}, H. A.},
+  title   = {{Bi-CGSTAB}: A fast and smoothly converging variant of {Bi-CG} for the solution of nonsymmetric linear systems},
+  journal = {SIAM Journal on Scientific and Statistical Computing},
+  volume  = {13},
+  number  = {2},
+  pages   = {631--644},
+  year    = {1992},
+  doi     = {10.1137/0913035}
+}
+
+@book{saad2003,
+  author    = {Saad, Yousef},
+  title     = {Iterative Methods for Sparse Linear Systems},
+  edition   = {2nd},
+  publisher = {SIAM},
+  address   = {Philadelphia},
+  year      = {2003},
+  isbn      = {978-0-89871-534-7},
+  doi       = {10.1137/1.9780898718003}
+}
+
+% ---------------------------------------------------------------- GPU FEM and AMR on the DFG benchmark (added)
+@article{cecka2011,
+  author  = {Cecka, Cris and Lew, Adrian J. and Darve, E.},
+  title   = {Assembly of finite element methods on graphics processors},
+  journal = {International Journal for Numerical Methods in Engineering},
+  volume  = {85},
+  number  = {5},
+  pages   = {640--669},
+  year    = {2011},
+  doi     = {10.1002/nme.2989}
+}
+
+@article{markall2013,
+  author  = {Markall, G. R. and Slemmer, A. and Ham, D. A. and Kelly, P. H. J. and Cantwell, C. D. and Sherwin, S. J.},
+  title   = {Finite element assembly strategies on multi-core and many-core architectures},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {71},
+  number  = {1},
+  pages   = {80--97},
+  year    = {2013},
+  doi     = {10.1002/fld.3648}
+}
+
+@article{braack2006,
+  author  = {Braack, M. and Richter, T.},
+  title   = {Solutions of {3D} {Navier--Stokes} benchmark problems with adaptive finite elements},
+  journal = {Computers \& Fluids},
+  volume  = {35},
+  number  = {4},
+  pages   = {372--392},
+  year    = {2006},
+  doi     = {10.1016/j.compfluid.2005.02.001}
+}
+
+@misc{bruchhaeuser2026,
+  author        = {Bruchh{\"a}user, Marius Paul and Margenberg, Nils and Bause, Markus},
+  title         = {Goal-oriented space-time adaptivity for the {Navier--Stokes} equations based on the dual weighted residual method},
+  year          = {2026},
+  eprint        = {2607.00686},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NA},
+  doi           = {10.48550/arXiv.2607.00686},
+  note          = {Preprint}
+}
+
+@misc{liebchen2024,
+  author        = {Liebchen, Manuel and Jendersie, Robert and Kaya, Utku and Lessig, Christian and Richter, Thomas},
+  title         = {An adaptive finite element multigrid solver using {GPU} acceleration},
+  year          = {2024},
+  eprint        = {2405.05047},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.NA},
+  doi           = {10.48550/arXiv.2405.05047},
+  note          = {Preprint}
+}
+
+% ---------------------------------------------------------------- added after the 2026-11-09 review
+% (checked against Crossref the same day)
+@article{jia2023,
+  author  = {Jia, Dongjie and Esmaily, Mahdi},
+  title   = {A time-consistent stabilized finite element method for fluids with applications to hemodynamics},
+  journal = {Scientific Reports},
+  volume  = {13},
+  pages   = {19120},
+  year    = {2023},
+  doi     = {10.1038/s41598-023-46316-4}
+}
+
+@article{olshanskii2025,
+  author  = {Olshanskii, Maxim and von Wahl, Henry},
+  title   = {Stability of instantaneous pressures in an {E}ulerian finite element method for moving boundary flow problems},
+  journal = {Journal of Computational Physics},
+  volume  = {533},
+  pages   = {113983},
+  year    = {2025},
+  doi     = {10.1016/j.jcp.2025.113983}
+}
+
+@article{di2005,
+  author  = {Di, Yana and Li, Ruo and Tang, Tao and Zhang, Pingwen},
+  title   = {Moving mesh finite element methods for the incompressible {N}avier--{S}tokes equations},
+  journal = {SIAM Journal on Scientific Computing},
+  volume  = {26},
+  number  = {3},
+  pages   = {1036--1056},
+  year    = {2005},
+  doi     = {10.1137/030600643}
+}
+
+@article{farrell2009,
+  author  = {Farrell, P. E. and Piggott, M. D. and Pain, C. C. and Gorman, G. J. and Wilson, C. R.},
+  title   = {Conservative interpolation between unstructured meshes via supermesh construction},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {198},
+  number  = {33--36},
+  pages   = {2632--2642},
+  year    = {2009},
+  doi     = {10.1016/j.cma.2009.03.004}
+}
+
+@article{farrell2011,
+  author  = {Farrell, P. E. and Maddison, J. R.},
+  title   = {Conservative interpolation between volume meshes by local {G}alerkin projection},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {200},
+  number  = {1--4},
+  pages   = {89--100},
+  year    = {2011},
+  doi     = {10.1016/j.cma.2010.07.015}
+}
+
+@article{besierwollner2012,
+  author  = {Besier, Michael and Wollner, Winnifried},
+  title   = {On the pressure approximation in nonstationary incompressible flow simulations on dynamically varying spatial meshes},
+  journal = {International Journal for Numerical Methods in Fluids},
+  volume  = {69},
+  number  = {6},
+  pages   = {1045--1064},
+  year    = {2012},
+  doi     = {10.1002/fld.2625}
+}
+
+@article{braack2013,
+  author  = {Braack, Malte and Lang, Jens and Taschenberger, Nico},
+  title   = {Stabilized finite elements for transient flow problems on varying spatial meshes},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  volume  = {253},
+  pages   = {106--116},
+  year    = {2013},
+  doi     = {10.1016/j.cma.2012.08.006}
+}
+
+@article{muller2019,
+  author  = {Muller, Etienne and Pelletier, Dominique and Garon, Andr{\'e}},
+  title   = {Interactions between adaptive time-integrators and adaptive meshing in a monolithic {FEM} solver},
+  journal = {International Journal of Numerical Methods for Heat \& Fluid Flow},
+  volume  = {29},
+  number  = {7},
+  pages   = {2297--2323},
+  year    = {2019},
+  doi     = {10.1108/HFF-09-2018-0495}
+}

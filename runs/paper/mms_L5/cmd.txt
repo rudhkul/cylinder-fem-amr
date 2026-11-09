@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v17_paper --mms --uniform-level 5 --dt 6.25e-05 --steps 1600

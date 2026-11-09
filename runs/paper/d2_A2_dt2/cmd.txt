@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v17_paper --steps 4000 --dt 0.002 --amr-interval 5 --amr-overlap 2 --stats-window 1.5 --amr-tol-vort 0.05 --amr-tol-interp 0.005 --max-level 5 --max-elems 400000 --min-level 2

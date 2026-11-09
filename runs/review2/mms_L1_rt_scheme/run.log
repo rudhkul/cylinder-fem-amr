@@ -1,0 +1,40 @@
+========================================================================
+  CUDA 2D FEM + AMR Incompressible Navier-Stokes Cylinder Flow Solver
+  Domain: [0, 2.2] x [0, 0.41] m | Cylinder: (0.2, 0.2), R = 0.05 m
+  Re = 100 | dt = 0.001 s | Steps = 100 | AMR Interval = 0 (Max Level = 4)
+  AMR: NVB refine+coarsen | tol vorticity 0.1 m/s, interpolation 0.01 m/s | coarsen below 0.35 x tol | look-ahead 0 s | buffer 1 | element budget 200000 | remesh overlapped by 5 steps
+  Time scheme: BDF2 | pressure update: rotational incremental projection | host threads 8
+  Solvers: momentum BiCGSTAB + multicolour ILU(0) | pressure CG + SA-AMG
+========================================================================
+[Init] Base Unstructured Mesh: 508 nodes, 896 triangles, 3316 CSR nonzeros, min angle 15.29 deg.
+  --> [AMR uniform] marked refine 0 / coarsen 0 | bisections 2688 (+0 closure) | removed vertices 0
+      mesh: 1912 nodes, 3584 elements (896 -> 3584), CSR nnz = 12904 | max level 1 | min angle 15.25 deg | adapt 0.0 ms
+[Step     1 | t = 0.0010 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,33) | C_D = -0.5578 | C_L = 1.3877 | dP = -0.2968
+[Step    10 | t = 0.0100 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,33) | C_D = -0.0475 | C_L = 0.8839 | dP = -0.0286
+[Reproject-test] step 10: max|u_new - u| = 7.665e-06 (max|u| = 1.674e+00)
+[Step    20 | t = 0.0200 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.0323 | C_L = 0.9472 | dP = -0.0314
+[Reproject-test] step 20: max|u_new - u| = 6.427e-06 (max|u| = 1.877e+00)
+[Step    30 | t = 0.0300 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.1244 | C_L = 0.9692 | dP = -0.0330
+[Reproject-test] step 30: max|u_new - u| = 5.292e-06 (max|u| = 2.037e+00)
+[Step    40 | t = 0.0400 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.2165 | C_L = 0.9435 | dP = -0.0330
+[Reproject-test] step 40: max|u_new - u| = 3.807e-06 (max|u| = 2.141e+00)
+[Step    50 | t = 0.0500 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (4,4,29) | C_D = 0.2967 | C_L = 0.8691 | dP = -0.0314
+[Reproject-test] step 50: max|u_new - u| = 5.162e-06 (max|u| = 2.176e+00)
+[Step    60 | t = 0.0600 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,29) | C_D = 0.3562 | C_L = 0.7521 | dP = -0.0282
+[Reproject-test] step 60: max|u_new - u| = 6.980e-06 (max|u| = 2.141e+00)
+[Step    70 | t = 0.0700 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.3901 | C_L = 0.6054 | dP = -0.0239
+[Reproject-test] step 70: max|u_new - u| = 7.685e-06 (max|u| = 2.036e+00)
+[Step    80 | t = 0.0800 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.3978 | C_L = 0.4467 | dP = -0.0190
+[Reproject-test] step 80: max|u_new - u| = 7.172e-06 (max|u| = 1.876e+00)
+[Step    90 | t = 0.0900 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (3,3,28) | C_D = 0.3820 | C_L = 0.2959 | dP = -0.0141
+[Reproject-test] step 90: max|u_new - u| = 6.213e-06 (max|u| = 1.674e+00)
+[Step   100 | t = 0.1000 s] Nodes:   1912 | Elems:   3584 | Iters(u,v,p): (4,3,26) | C_D = 0.3470 | C_L = 0.1711 | dP = -0.0099
+[MMS] t = 1.000000e-01 | nodes 1912 | h_max 4.722654e-02 | dt 1.000000e-03
+[MMS] ||u-u_h||_L2 = 1.565798e-02 (rel 1.913510e-02) | |u-u_h|_H1 = 1.448251e+00 (rel 1.493594e-01) | ||p-p_h||_L2 = 6.521631e-02 (rel 2.777925e-01)
+[MMS] max |p-p_h| on cylinder nodes = 8.459850e-02 | at the DFG probes = 8.026781e-02
+[Timing] 0.39 s wall, 0.00 s in AMR (incl. transfer) | PPE AMG setup 0.00 s | AMG remaps 0 | non-converged linear solves: 0
+[Timing] step phases: momentum 0.05 s (ILU colouring 0.00 s, 3 colours at the end) | pressure 0.27 s (assembly, AMG setup, CG)
+[Timing] AMR sub-phases: adjacency 0.00 s; traces 0.00 s; trace merge 0.00 s; leaf collect 0.00 s; morton keys 0.00 s; morton sort 0.00 s; vertex compaction 0.00 s; mesh fill 0.00 s;
+[Timing] AMG setup phases (all setups): download 0.00 s; D^-1 + rho 0.00 s; aggregation 0.00 s; P smoothing 0.00 s; transpose 0.00 s; Galerkin product 0.00 s; upload 0.00 s; coarse inverse 0.00 s; remap 0.00 s;
+[Output] Wrote ParaView unstructured mesh & flow field to: cylinder_fem_amr_final.vtk
+[Output] Wrote force history to: cylinder_fem_amr_forces.csv

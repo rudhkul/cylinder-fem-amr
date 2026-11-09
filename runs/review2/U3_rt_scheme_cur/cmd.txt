@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v18c_review --steps 8000 --stats-window 1.5 --uniform-level 3 --reproject-test 10 --remesh-projection scheme-current

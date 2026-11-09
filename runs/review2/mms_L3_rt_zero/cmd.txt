@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v18c_review --mms --uniform-level 3 --dt 0.00025 --steps 400 --min-level 0 --reproject-test 10 --remesh-projection current

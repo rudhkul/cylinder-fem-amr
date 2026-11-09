@@ -1,0 +1,1627 @@
+========================================================================
+  CUDA 2D FEM + AMR Incompressible Navier-Stokes Cylinder Flow Solver
+  Domain: [0, 2.2] x [0, 0.41] m | Cylinder: (0.2, 0.2), R = 0.05 m
+  Re = 100 | dt = 0.001 s | Steps = 8000 | AMR Interval = 0 (Max Level = 4)
+  AMR: NVB refine+coarsen | tol vorticity 0.1 m/s, interpolation 0.01 m/s | coarsen below 0.35 x tol | look-ahead 0 s | buffer 1 | element budget 200000 | remesh overlapped by 5 steps
+  Time scheme: BDF2 | pressure update: rotational incremental projection | host threads 8
+  Solvers: momentum BiCGSTAB + multicolour ILU(0) | pressure CG + SA-AMG
+========================================================================
+[Init] Base Unstructured Mesh: 508 nodes, 896 triangles, 3316 CSR nonzeros, min angle 15.29 deg.
+  --> [AMR uniform] marked refine 0 / coarsen 0 | bisections 56448 (+0 closure) | removed vertices 0
+      mesh: 29152 nodes, 57344 elements (896 -> 57344), CSR nnz = 202144 | max level 3 | min angle 15.21 deg | adapt 0.0 ms
+[Step     1 | t = 0.0010 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,0,32) | C_D = 276.8809 | C_L = 0.3094 | dP = 172.5831
+[Step    10 | t = 0.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,30) | C_D = 2.8043 | C_L = 0.0935 | dP = 1.2014
+[Reproject-test] step 10: max|u_new - u| = 5.080e-04 (max|u| = 1.933e+00)
+[Step    20 | t = 0.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,26) | C_D = 2.4144 | C_L = 0.0939 | dP = 1.2355
+[Reproject-test] step 20: max|u_new - u| = 1.254e-04 (max|u| = 1.988e+00)
+[Step    30 | t = 0.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.3844 | C_L = 0.0898 | dP = 1.3696
+[Reproject-test] step 30: max|u_new - u| = 5.216e-05 (max|u| = 2.029e+00)
+[Step    40 | t = 0.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.4605 | C_L = 0.0817 | dP = 1.5191
+[Reproject-test] step 40: max|u_new - u| = 3.195e-05 (max|u| = 2.064e+00)
+[Step    50 | t = 0.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.5740 | C_L = 0.0702 | dP = 1.6648
+[Reproject-test] step 50: max|u_new - u| = 2.786e-05 (max|u| = 2.093e+00)
+[Step    60 | t = 0.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.6966 | C_L = 0.0561 | dP = 1.8016
+[Reproject-test] step 60: max|u_new - u| = 3.012e-05 (max|u| = 2.115e+00)
+[Step    70 | t = 0.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.8137 | C_L = 0.0400 | dP = 1.9280
+[Reproject-test] step 70: max|u_new - u| = 3.020e-05 (max|u| = 2.132e+00)
+[Step    80 | t = 0.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 2.9180 | C_L = 0.0223 | dP = 2.0423
+[Reproject-test] step 80: max|u_new - u| = 2.880e-05 (max|u| = 2.144e+00)
+[Step    90 | t = 0.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 3.0062 | C_L = 0.0033 | dP = 2.1413
+[Reproject-test] step 90: max|u_new - u| = 2.634e-05 (max|u| = 2.155e+00)
+[Step   100 | t = 0.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 3.0780 | C_L = -0.0168 | dP = 2.2208
+[Reproject-test] step 100: max|u_new - u| = 2.403e-05 (max|u| = 2.167e+00)
+[Step   110 | t = 0.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 3.1347 | C_L = -0.0379 | dP = 2.2790
+[Reproject-test] step 110: max|u_new - u| = 2.036e-05 (max|u| = 2.185e+00)
+[Step   120 | t = 0.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,5,25) | C_D = 3.1785 | C_L = -0.0597 | dP = 2.3189
+[Reproject-test] step 120: max|u_new - u| = 1.591e-05 (max|u| = 2.206e+00)
+[Step   130 | t = 0.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,5,25) | C_D = 3.2104 | C_L = -0.0813 | dP = 2.3461
+[Reproject-test] step 130: max|u_new - u| = 1.140e-05 (max|u| = 2.219e+00)
+[Step   140 | t = 0.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (5,5,25) | C_D = 3.2308 | C_L = -0.1019 | dP = 2.3653
+[Reproject-test] step 140: max|u_new - u| = 8.970e-06 (max|u| = 2.217e+00)
+[Step   150 | t = 0.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,5,25) | C_D = 3.2398 | C_L = -0.1204 | dP = 2.3787
+[Reproject-test] step 150: max|u_new - u| = 8.181e-06 (max|u| = 2.210e+00)
+[Step   160 | t = 0.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,5,24) | C_D = 3.2387 | C_L = -0.1362 | dP = 2.3872
+[Reproject-test] step 160: max|u_new - u| = 7.680e-06 (max|u| = 2.201e+00)
+[Step   170 | t = 0.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2297 | C_L = -0.1492 | dP = 2.3913
+[Reproject-test] step 170: max|u_new - u| = 7.286e-06 (max|u| = 2.196e+00)
+[Step   180 | t = 0.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2155 | C_L = -0.1595 | dP = 2.3916
+[Reproject-test] step 180: max|u_new - u| = 7.400e-06 (max|u| = 2.192e+00)
+[Step   190 | t = 0.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1986 | C_L = -0.1672 | dP = 2.3894
+[Reproject-test] step 190: max|u_new - u| = 7.317e-06 (max|u| = 2.188e+00)
+[Step   200 | t = 0.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1812 | C_L = -0.1721 | dP = 2.3857
+[Reproject-test] step 200: max|u_new - u| = 6.928e-06 (max|u| = 2.185e+00)
+[Step   210 | t = 0.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1644 | C_L = -0.1742 | dP = 2.3813
+[Reproject-test] step 210: max|u_new - u| = 6.338e-06 (max|u| = 2.182e+00)
+[Step   220 | t = 0.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1490 | C_L = -0.1735 | dP = 2.3769
+[Reproject-test] step 220: max|u_new - u| = 5.670e-06 (max|u| = 2.179e+00)
+[Step   230 | t = 0.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1352 | C_L = -0.1698 | dP = 2.3729
+[Reproject-test] step 230: max|u_new - u| = 5.226e-06 (max|u| = 2.176e+00)
+[Step   240 | t = 0.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1229 | C_L = -0.1631 | dP = 2.3692
+[Reproject-test] step 240: max|u_new - u| = 4.523e-06 (max|u| = 2.173e+00)
+[Step   250 | t = 0.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1120 | C_L = -0.1534 | dP = 2.3659
+[Reproject-test] step 250: max|u_new - u| = 4.062e-06 (max|u| = 2.170e+00)
+[Step   260 | t = 0.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1022 | C_L = -0.1407 | dP = 2.3630
+[Reproject-test] step 260: max|u_new - u| = 3.692e-06 (max|u| = 2.167e+00)
+[Step   270 | t = 0.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0933 | C_L = -0.1250 | dP = 2.3604
+[Reproject-test] step 270: max|u_new - u| = 3.412e-06 (max|u| = 2.164e+00)
+[Step   280 | t = 0.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0851 | C_L = -0.1067 | dP = 2.3580
+[Reproject-test] step 280: max|u_new - u| = 3.335e-06 (max|u| = 2.161e+00)
+[Step   290 | t = 0.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0775 | C_L = -0.0858 | dP = 2.3558
+[Reproject-test] step 290: max|u_new - u| = 3.329e-06 (max|u| = 2.158e+00)
+[Step   300 | t = 0.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0703 | C_L = -0.0629 | dP = 2.3537
+[Reproject-test] step 300: max|u_new - u| = 3.356e-06 (max|u| = 2.154e+00)
+[Step   310 | t = 0.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0635 | C_L = -0.0382 | dP = 2.3518
+[Reproject-test] step 310: max|u_new - u| = 3.504e-06 (max|u| = 2.151e+00)
+[Step   320 | t = 0.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0572 | C_L = -0.0123 | dP = 2.3500
+[Reproject-test] step 320: max|u_new - u| = 3.664e-06 (max|u| = 2.150e+00)
+[Step   330 | t = 0.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,22) | C_D = 3.0512 | C_L = 0.0144 | dP = 2.3483
+[Reproject-test] step 330: max|u_new - u| = 3.803e-06 (max|u| = 2.150e+00)
+[Step   340 | t = 0.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,22) | C_D = 3.0456 | C_L = 0.0412 | dP = 2.3468
+[Reproject-test] step 340: max|u_new - u| = 3.910e-06 (max|u| = 2.150e+00)
+[Step   350 | t = 0.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0403 | C_L = 0.0676 | dP = 2.3456
+[Reproject-test] step 350: max|u_new - u| = 3.976e-06 (max|u| = 2.151e+00)
+[Step   360 | t = 0.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0354 | C_L = 0.0930 | dP = 2.3445
+[Reproject-test] step 360: max|u_new - u| = 3.994e-06 (max|u| = 2.151e+00)
+[Step   370 | t = 0.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0309 | C_L = 0.1167 | dP = 2.3437
+[Reproject-test] step 370: max|u_new - u| = 3.958e-06 (max|u| = 2.152e+00)
+[Step   380 | t = 0.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0267 | C_L = 0.1381 | dP = 2.3430
+[Reproject-test] step 380: max|u_new - u| = 3.865e-06 (max|u| = 2.153e+00)
+[Step   390 | t = 0.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0228 | C_L = 0.1566 | dP = 2.3426
+[Reproject-test] step 390: max|u_new - u| = 3.714e-06 (max|u| = 2.154e+00)
+[Step   400 | t = 0.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0192 | C_L = 0.1717 | dP = 2.3424
+[Reproject-test] step 400: max|u_new - u| = 3.505e-06 (max|u| = 2.154e+00)
+[Step   410 | t = 0.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0158 | C_L = 0.1829 | dP = 2.3422
+[Reproject-test] step 410: max|u_new - u| = 3.240e-06 (max|u| = 2.155e+00)
+[Step   420 | t = 0.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0127 | C_L = 0.1898 | dP = 2.3422
+[Reproject-test] step 420: max|u_new - u| = 2.923e-06 (max|u| = 2.155e+00)
+[Step   430 | t = 0.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0097 | C_L = 0.1920 | dP = 2.3422
+[Reproject-test] step 430: max|u_new - u| = 2.684e-06 (max|u| = 2.156e+00)
+[Step   440 | t = 0.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0068 | C_L = 0.1894 | dP = 2.3423
+[Reproject-test] step 440: max|u_new - u| = 2.434e-06 (max|u| = 2.155e+00)
+[Step   450 | t = 0.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0041 | C_L = 0.1820 | dP = 2.3423
+[Reproject-test] step 450: max|u_new - u| = 2.439e-06 (max|u| = 2.155e+00)
+[Step   460 | t = 0.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0014 | C_L = 0.1697 | dP = 2.3422
+[Reproject-test] step 460: max|u_new - u| = 2.482e-06 (max|u| = 2.154e+00)
+[Step   470 | t = 0.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 2.9988 | C_L = 0.1527 | dP = 2.3421
+[Reproject-test] step 470: max|u_new - u| = 2.509e-06 (max|u| = 2.153e+00)
+[Step   480 | t = 0.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9963 | C_L = 0.1313 | dP = 2.3418
+[Reproject-test] step 480: max|u_new - u| = 2.565e-06 (max|u| = 2.152e+00)
+[Step   490 | t = 0.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9939 | C_L = 0.1060 | dP = 2.3416
+[Reproject-test] step 490: max|u_new - u| = 2.563e-06 (max|u| = 2.150e+00)
+[Step   500 | t = 0.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9916 | C_L = 0.0773 | dP = 2.3412
+[Reproject-test] step 500: max|u_new - u| = 2.529e-06 (max|u| = 2.148e+00)
+[Step   510 | t = 0.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9893 | C_L = 0.0459 | dP = 2.3409
+[Reproject-test] step 510: max|u_new - u| = 2.818e-06 (max|u| = 2.145e+00)
+[Step   520 | t = 0.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9872 | C_L = 0.0124 | dP = 2.3405
+[Reproject-test] step 520: max|u_new - u| = 2.907e-06 (max|u| = 2.143e+00)
+[Step   530 | t = 0.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9853 | C_L = -0.0221 | dP = 2.3403
+[Reproject-test] step 530: max|u_new - u| = 3.137e-06 (max|u| = 2.140e+00)
+[Step   540 | t = 0.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9835 | C_L = -0.0569 | dP = 2.3401
+[Reproject-test] step 540: max|u_new - u| = 3.321e-06 (max|u| = 2.136e+00)
+[Step   550 | t = 0.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9820 | C_L = -0.0911 | dP = 2.3401
+[Reproject-test] step 550: max|u_new - u| = 3.453e-06 (max|u| = 2.133e+00)
+[Step   560 | t = 0.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9806 | C_L = -0.1236 | dP = 2.3402
+[Reproject-test] step 560: max|u_new - u| = 3.528e-06 (max|u| = 2.130e+00)
+[Step   570 | t = 0.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9793 | C_L = -0.1537 | dP = 2.3405
+[Reproject-test] step 570: max|u_new - u| = 3.542e-06 (max|u| = 2.127e+00)
+[Step   580 | t = 0.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9783 | C_L = -0.1804 | dP = 2.3409
+[Reproject-test] step 580: max|u_new - u| = 3.493e-06 (max|u| = 2.124e+00)
+[Step   590 | t = 0.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9774 | C_L = -0.2030 | dP = 2.3415
+[Reproject-test] step 590: max|u_new - u| = 3.380e-06 (max|u| = 2.124e+00)
+[Step   600 | t = 0.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9766 | C_L = -0.2207 | dP = 2.3422
+[Reproject-test] step 600: max|u_new - u| = 3.203e-06 (max|u| = 2.126e+00)
+[Step   610 | t = 0.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9759 | C_L = -0.2330 | dP = 2.3430
+[Reproject-test] step 610: max|u_new - u| = 2.971e-06 (max|u| = 2.127e+00)
+[Step   620 | t = 0.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9753 | C_L = -0.2394 | dP = 2.3437
+[Reproject-test] step 620: max|u_new - u| = 2.684e-06 (max|u| = 2.129e+00)
+[Step   630 | t = 0.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9746 | C_L = -0.2396 | dP = 2.3444
+[Reproject-test] step 630: max|u_new - u| = 2.611e-06 (max|u| = 2.130e+00)
+[Step   640 | t = 0.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9740 | C_L = -0.2335 | dP = 2.3450
+[Reproject-test] step 640: max|u_new - u| = 2.776e-06 (max|u| = 2.131e+00)
+[Step   650 | t = 0.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 2.9732 | C_L = -0.2212 | dP = 2.3455
+[Reproject-test] step 650: max|u_new - u| = 2.856e-06 (max|u| = 2.131e+00)
+[Step   660 | t = 0.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 2.9725 | C_L = -0.2027 | dP = 2.3457
+[Reproject-test] step 660: max|u_new - u| = 2.886e-06 (max|u| = 2.131e+00)
+[Step   670 | t = 0.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 2.9716 | C_L = -0.1785 | dP = 2.3457
+[Reproject-test] step 670: max|u_new - u| = 3.046e-06 (max|u| = 2.130e+00)
+[Step   680 | t = 0.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9707 | C_L = -0.1492 | dP = 2.3456
+[Reproject-test] step 680: max|u_new - u| = 3.124e-06 (max|u| = 2.129e+00)
+[Step   690 | t = 0.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9697 | C_L = -0.1154 | dP = 2.3453
+[Reproject-test] step 690: max|u_new - u| = 3.183e-06 (max|u| = 2.127e+00)
+[Step   700 | t = 0.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9688 | C_L = -0.0780 | dP = 2.3448
+[Reproject-test] step 700: max|u_new - u| = 3.311e-06 (max|u| = 2.125e+00)
+[Step   710 | t = 0.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9679 | C_L = -0.0380 | dP = 2.3443
+[Reproject-test] step 710: max|u_new - u| = 3.405e-06 (max|u| = 2.122e+00)
+[Step   720 | t = 0.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9671 | C_L = 0.0035 | dP = 2.3438
+[Reproject-test] step 720: max|u_new - u| = 3.489e-06 (max|u| = 2.120e+00)
+[Step   730 | t = 0.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9664 | C_L = 0.0455 | dP = 2.3434
+[Reproject-test] step 730: max|u_new - u| = 3.451e-06 (max|u| = 2.122e+00)
+[Step   740 | t = 0.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9658 | C_L = 0.0867 | dP = 2.3432
+[Reproject-test] step 740: max|u_new - u| = 3.402e-06 (max|u| = 2.125e+00)
+[Step   750 | t = 0.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9655 | C_L = 0.1259 | dP = 2.3432
+[Reproject-test] step 750: max|u_new - u| = 3.379e-06 (max|u| = 2.128e+00)
+[Step   760 | t = 0.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9653 | C_L = 0.1619 | dP = 2.3434
+[Reproject-test] step 760: max|u_new - u| = 3.447e-06 (max|u| = 2.131e+00)
+[Step   770 | t = 0.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9654 | C_L = 0.1936 | dP = 2.3438
+[Reproject-test] step 770: max|u_new - u| = 3.442e-06 (max|u| = 2.134e+00)
+[Step   780 | t = 0.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9656 | C_L = 0.2201 | dP = 2.3446
+[Reproject-test] step 780: max|u_new - u| = 3.360e-06 (max|u| = 2.137e+00)
+[Step   790 | t = 0.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9659 | C_L = 0.2403 | dP = 2.3455
+[Reproject-test] step 790: max|u_new - u| = 3.203e-06 (max|u| = 2.140e+00)
+[Step   800 | t = 0.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9663 | C_L = 0.2537 | dP = 2.3465
+[Reproject-test] step 800: max|u_new - u| = 2.970e-06 (max|u| = 2.142e+00)
+[Step   810 | t = 0.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9667 | C_L = 0.2595 | dP = 2.3476
+[Reproject-test] step 810: max|u_new - u| = 2.951e-06 (max|u| = 2.144e+00)
+[Step   820 | t = 0.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9672 | C_L = 0.2576 | dP = 2.3486
+[Reproject-test] step 820: max|u_new - u| = 3.160e-06 (max|u| = 2.145e+00)
+[Step   830 | t = 0.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9675 | C_L = 0.2477 | dP = 2.3496
+[Reproject-test] step 830: max|u_new - u| = 3.407e-06 (max|u| = 2.146e+00)
+[Step   840 | t = 0.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 2.9677 | C_L = 0.2299 | dP = 2.3503
+[Reproject-test] step 840: max|u_new - u| = 3.683e-06 (max|u| = 2.146e+00)
+[Step   850 | t = 0.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 2.9678 | C_L = 0.2047 | dP = 2.3507
+[Reproject-test] step 850: max|u_new - u| = 3.830e-06 (max|u| = 2.146e+00)
+[Step   860 | t = 0.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 2.9678 | C_L = 0.1725 | dP = 2.3510
+[Reproject-test] step 860: max|u_new - u| = 4.102e-06 (max|u| = 2.145e+00)
+[Step   870 | t = 0.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9677 | C_L = 0.1341 | dP = 2.3509
+[Reproject-test] step 870: max|u_new - u| = 4.357e-06 (max|u| = 2.144e+00)
+[Step   880 | t = 0.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9675 | C_L = 0.0905 | dP = 2.3506
+[Reproject-test] step 880: max|u_new - u| = 4.506e-06 (max|u| = 2.141e+00)
+[Step   890 | t = 0.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9673 | C_L = 0.0428 | dP = 2.3502
+[Reproject-test] step 890: max|u_new - u| = 4.820e-06 (max|u| = 2.139e+00)
+[Step   900 | t = 0.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 2.9672 | C_L = -0.0076 | dP = 2.3498
+[Reproject-test] step 900: max|u_new - u| = 5.074e-06 (max|u| = 2.136e+00)
+[Step   910 | t = 0.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9673 | C_L = -0.0592 | dP = 2.3494
+[Reproject-test] step 910: max|u_new - u| = 5.199e-06 (max|u| = 2.132e+00)
+[Step   920 | t = 0.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9675 | C_L = -0.1106 | dP = 2.3493
+[Reproject-test] step 920: max|u_new - u| = 5.278e-06 (max|u| = 2.128e+00)
+[Step   930 | t = 0.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9679 | C_L = -0.1603 | dP = 2.3494
+[Reproject-test] step 930: max|u_new - u| = 5.360e-06 (max|u| = 2.124e+00)
+[Step   940 | t = 0.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9687 | C_L = -0.2065 | dP = 2.3499
+[Reproject-test] step 940: max|u_new - u| = 5.257e-06 (max|u| = 2.120e+00)
+[Step   950 | t = 0.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9697 | C_L = -0.2479 | dP = 2.3508
+[Reproject-test] step 950: max|u_new - u| = 5.137e-06 (max|u| = 2.119e+00)
+[Step   960 | t = 0.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9709 | C_L = -0.2829 | dP = 2.3521
+[Reproject-test] step 960: max|u_new - u| = 5.131e-06 (max|u| = 2.122e+00)
+[Step   970 | t = 0.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9724 | C_L = -0.3105 | dP = 2.3536
+[Reproject-test] step 970: max|u_new - u| = 5.002e-06 (max|u| = 2.126e+00)
+[Step   980 | t = 0.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9739 | C_L = -0.3295 | dP = 2.3555
+[Reproject-test] step 980: max|u_new - u| = 4.789e-06 (max|u| = 2.129e+00)
+[Step   990 | t = 0.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9755 | C_L = -0.3391 | dP = 2.3574
+[Reproject-test] step 990: max|u_new - u| = 4.829e-06 (max|u| = 2.132e+00)
+[Step  1000 | t = 1.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9771 | C_L = -0.3388 | dP = 2.3592
+[Reproject-test] step 1000: max|u_new - u| = 4.712e-06 (max|u| = 2.134e+00)
+[Step  1010 | t = 1.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 2.9784 | C_L = -0.3284 | dP = 2.3608
+[Reproject-test] step 1010: max|u_new - u| = 4.452e-06 (max|u| = 2.136e+00)
+[Step  1020 | t = 1.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 2.9796 | C_L = -0.3077 | dP = 2.3621
+[Reproject-test] step 1020: max|u_new - u| = 4.670e-06 (max|u| = 2.137e+00)
+[Step  1030 | t = 1.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 2.9805 | C_L = -0.2774 | dP = 2.3630
+[Reproject-test] step 1030: max|u_new - u| = 5.053e-06 (max|u| = 2.137e+00)
+[Step  1040 | t = 1.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 2.9812 | C_L = -0.2379 | dP = 2.3633
+[Reproject-test] step 1040: max|u_new - u| = 5.388e-06 (max|u| = 2.136e+00)
+[Step  1050 | t = 1.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 2.9816 | C_L = -0.1902 | dP = 2.3632
+[Reproject-test] step 1050: max|u_new - u| = 5.960e-06 (max|u| = 2.135e+00)
+[Step  1060 | t = 1.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9819 | C_L = -0.1357 | dP = 2.3627
+[Reproject-test] step 1060: max|u_new - u| = 6.425e-06 (max|u| = 2.132e+00)
+[Step  1070 | t = 1.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9822 | C_L = -0.0759 | dP = 2.3619
+[Reproject-test] step 1070: max|u_new - u| = 6.718e-06 (max|u| = 2.129e+00)
+[Step  1080 | t = 1.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9825 | C_L = -0.0125 | dP = 2.3610
+[Reproject-test] step 1080: max|u_new - u| = 7.003e-06 (max|u| = 2.126e+00)
+[Step  1090 | t = 1.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9830 | C_L = 0.0526 | dP = 2.3602
+[Reproject-test] step 1090: max|u_new - u| = 7.609e-06 (max|u| = 2.122e+00)
+[Step  1100 | t = 1.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9837 | C_L = 0.1173 | dP = 2.3597
+[Reproject-test] step 1100: max|u_new - u| = 7.978e-06 (max|u| = 2.125e+00)
+[Step  1110 | t = 1.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9849 | C_L = 0.1794 | dP = 2.3598
+[Reproject-test] step 1110: max|u_new - u| = 8.078e-06 (max|u| = 2.130e+00)
+[Step  1120 | t = 1.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9865 | C_L = 0.2369 | dP = 2.3605
+[Reproject-test] step 1120: max|u_new - u| = 8.356e-06 (max|u| = 2.135e+00)
+[Step  1130 | t = 1.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9886 | C_L = 0.2876 | dP = 2.3618
+[Reproject-test] step 1130: max|u_new - u| = 8.406e-06 (max|u| = 2.140e+00)
+[Step  1140 | t = 1.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 2.9911 | C_L = 0.3297 | dP = 2.3638
+[Reproject-test] step 1140: max|u_new - u| = 8.336e-06 (max|u| = 2.145e+00)
+[Step  1150 | t = 1.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9938 | C_L = 0.3615 | dP = 2.3664
+[Reproject-test] step 1150: max|u_new - u| = 8.349e-06 (max|u| = 2.150e+00)
+[Step  1160 | t = 1.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 2.9967 | C_L = 0.3817 | dP = 2.3694
+[Reproject-test] step 1160: max|u_new - u| = 8.168e-06 (max|u| = 2.153e+00)
+[Step  1170 | t = 1.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 2.9996 | C_L = 0.3891 | dP = 2.3724
+[Reproject-test] step 1170: max|u_new - u| = 8.076e-06 (max|u| = 2.157e+00)
+[Step  1180 | t = 1.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0024 | C_L = 0.3832 | dP = 2.3754
+[Reproject-test] step 1180: max|u_new - u| = 7.816e-06 (max|u| = 2.159e+00)
+[Step  1190 | t = 1.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,26) | C_D = 3.0048 | C_L = 0.3638 | dP = 2.3778
+[Reproject-test] step 1190: max|u_new - u| = 7.483e-06 (max|u| = 2.160e+00)
+[Step  1200 | t = 1.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,26) | C_D = 3.0067 | C_L = 0.3312 | dP = 2.3797
+[Reproject-test] step 1200: max|u_new - u| = 7.417e-06 (max|u| = 2.161e+00)
+[Step  1210 | t = 1.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 3.0082 | C_L = 0.2861 | dP = 2.3807
+[Reproject-test] step 1210: max|u_new - u| = 7.334e-06 (max|u| = 2.160e+00)
+[Step  1220 | t = 1.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,19) | C_D = 3.0092 | C_L = 0.2296 | dP = 2.3809
+[Reproject-test] step 1220: max|u_new - u| = 7.856e-06 (max|u| = 2.159e+00)
+[Step  1230 | t = 1.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.0098 | C_L = 0.1634 | dP = 2.3804
+[Reproject-test] step 1230: max|u_new - u| = 8.536e-06 (max|u| = 2.157e+00)
+[Step  1240 | t = 1.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.0102 | C_L = 0.0894 | dP = 2.3793
+[Reproject-test] step 1240: max|u_new - u| = 8.984e-06 (max|u| = 2.153e+00)
+[Step  1250 | t = 1.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0106 | C_L = 0.0101 | dP = 2.3779
+[Reproject-test] step 1250: max|u_new - u| = 9.467e-06 (max|u| = 2.149e+00)
+[Step  1260 | t = 1.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0112 | C_L = -0.0720 | dP = 2.3765
+[Reproject-test] step 1260: max|u_new - u| = 9.851e-06 (max|u| = 2.144e+00)
+[Step  1270 | t = 1.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0123 | C_L = -0.1540 | dP = 2.3757
+[Reproject-test] step 1270: max|u_new - u| = 1.037e-05 (max|u| = 2.139e+00)
+[Step  1280 | t = 1.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0140 | C_L = -0.2331 | dP = 2.3755
+[Reproject-test] step 1280: max|u_new - u| = 1.035e-05 (max|u| = 2.133e+00)
+[Step  1290 | t = 1.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0163 | C_L = -0.3063 | dP = 2.3764
+[Reproject-test] step 1290: max|u_new - u| = 1.045e-05 (max|u| = 2.127e+00)
+[Step  1300 | t = 1.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0195 | C_L = -0.3708 | dP = 2.3785
+[Reproject-test] step 1300: max|u_new - u| = 1.024e-05 (max|u| = 2.132e+00)
+[Step  1310 | t = 1.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0232 | C_L = -0.4241 | dP = 2.3816
+[Reproject-test] step 1310: max|u_new - u| = 1.023e-05 (max|u| = 2.138e+00)
+[Step  1320 | t = 1.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0275 | C_L = -0.4640 | dP = 2.3855
+[Reproject-test] step 1320: max|u_new - u| = 1.024e-05 (max|u| = 2.144e+00)
+[Step  1330 | t = 1.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0319 | C_L = -0.4887 | dP = 2.3900
+[Reproject-test] step 1330: max|u_new - u| = 1.009e-05 (max|u| = 2.149e+00)
+[Step  1340 | t = 1.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0361 | C_L = -0.4970 | dP = 2.3946
+[Reproject-test] step 1340: max|u_new - u| = 9.833e-06 (max|u| = 2.153e+00)
+[Step  1350 | t = 1.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0399 | C_L = -0.4881 | dP = 2.3988
+[Reproject-test] step 1350: max|u_new - u| = 9.315e-06 (max|u| = 2.156e+00)
+[Step  1360 | t = 1.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,26) | C_D = 3.0430 | C_L = -0.4620 | dP = 2.4022
+[Reproject-test] step 1360: max|u_new - u| = 8.554e-06 (max|u| = 2.158e+00)
+[Step  1370 | t = 1.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 3.0452 | C_L = -0.4193 | dP = 2.4043
+[Reproject-test] step 1370: max|u_new - u| = 8.381e-06 (max|u| = 2.158e+00)
+[Step  1380 | t = 1.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,25) | C_D = 3.0465 | C_L = -0.3611 | dP = 2.4050
+[Reproject-test] step 1380: max|u_new - u| = 9.579e-06 (max|u| = 2.158e+00)
+[Step  1390 | t = 1.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.0468 | C_L = -0.2891 | dP = 2.4043
+[Reproject-test] step 1390: max|u_new - u| = 1.046e-05 (max|u| = 2.156e+00)
+[Step  1400 | t = 1.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.0464 | C_L = -0.2057 | dP = 2.4023
+[Reproject-test] step 1400: max|u_new - u| = 1.120e-05 (max|u| = 2.153e+00)
+[Step  1410 | t = 1.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0456 | C_L = -0.1136 | dP = 2.3995
+[Reproject-test] step 1410: max|u_new - u| = 1.181e-05 (max|u| = 2.149e+00)
+[Step  1420 | t = 1.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0449 | C_L = -0.0161 | dP = 2.3963
+[Reproject-test] step 1420: max|u_new - u| = 1.220e-05 (max|u| = 2.144e+00)
+[Step  1430 | t = 1.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0446 | C_L = 0.0835 | dP = 2.3934
+[Reproject-test] step 1430: max|u_new - u| = 1.230e-05 (max|u| = 2.138e+00)
+[Step  1440 | t = 1.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0451 | C_L = 0.1815 | dP = 2.3914
+[Reproject-test] step 1440: max|u_new - u| = 1.257e-05 (max|u| = 2.135e+00)
+[Step  1450 | t = 1.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0467 | C_L = 0.2741 | dP = 2.3907
+[Reproject-test] step 1450: max|u_new - u| = 1.257e-05 (max|u| = 2.143e+00)
+[Step  1460 | t = 1.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0494 | C_L = 0.3578 | dP = 2.3917
+[Reproject-test] step 1460: max|u_new - u| = 1.227e-05 (max|u| = 2.150e+00)
+[Step  1470 | t = 1.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0532 | C_L = 0.4291 | dP = 2.3945
+[Reproject-test] step 1470: max|u_new - u| = 1.187e-05 (max|u| = 2.158e+00)
+[Step  1480 | t = 1.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0579 | C_L = 0.4853 | dP = 2.3987
+[Reproject-test] step 1480: max|u_new - u| = 1.122e-05 (max|u| = 2.165e+00)
+[Step  1490 | t = 1.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0631 | C_L = 0.5238 | dP = 2.4041
+[Reproject-test] step 1490: max|u_new - u| = 1.086e-05 (max|u| = 2.171e+00)
+[Step  1500 | t = 1.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.0682 | C_L = 0.5430 | dP = 2.4100
+[Reproject-test] step 1500: max|u_new - u| = 1.080e-05 (max|u| = 2.176e+00)
+[Step  1510 | t = 1.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0729 | C_L = 0.5417 | dP = 2.4156
+[Reproject-test] step 1510: max|u_new - u| = 1.037e-05 (max|u| = 2.180e+00)
+[Step  1520 | t = 1.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0765 | C_L = 0.5197 | dP = 2.4203
+[Reproject-test] step 1520: max|u_new - u| = 9.414e-06 (max|u| = 2.183e+00)
+[Step  1530 | t = 1.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.0789 | C_L = 0.4776 | dP = 2.4234
+[Reproject-test] step 1530: max|u_new - u| = 1.129e-05 (max|u| = 2.185e+00)
+[Step  1540 | t = 1.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.0798 | C_L = 0.4167 | dP = 2.4246
+[Reproject-test] step 1540: max|u_new - u| = 1.209e-05 (max|u| = 2.184e+00)
+[Step  1550 | t = 1.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.0793 | C_L = 0.3388 | dP = 2.4237
+[Reproject-test] step 1550: max|u_new - u| = 1.261e-05 (max|u| = 2.183e+00)
+[Step  1560 | t = 1.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.0777 | C_L = 0.2467 | dP = 2.4211
+[Reproject-test] step 1560: max|u_new - u| = 1.322e-05 (max|u| = 2.180e+00)
+[Step  1570 | t = 1.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0755 | C_L = 0.1435 | dP = 2.4171
+[Reproject-test] step 1570: max|u_new - u| = 1.351e-05 (max|u| = 2.175e+00)
+[Step  1580 | t = 1.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0732 | C_L = 0.0330 | dP = 2.4125
+[Reproject-test] step 1580: max|u_new - u| = 1.385e-05 (max|u| = 2.170e+00)
+[Step  1590 | t = 1.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0714 | C_L = -0.0810 | dP = 2.4081
+[Reproject-test] step 1590: max|u_new - u| = 1.399e-05 (max|u| = 2.163e+00)
+[Step  1600 | t = 1.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0706 | C_L = -0.1942 | dP = 2.4047
+[Reproject-test] step 1600: max|u_new - u| = 1.385e-05 (max|u| = 2.155e+00)
+[Step  1610 | t = 1.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0713 | C_L = -0.3023 | dP = 2.4029
+[Reproject-test] step 1610: max|u_new - u| = 1.346e-05 (max|u| = 2.147e+00)
+[Step  1620 | t = 1.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0736 | C_L = -0.4012 | dP = 2.4033
+[Reproject-test] step 1620: max|u_new - u| = 1.300e-05 (max|u| = 2.140e+00)
+[Step  1630 | t = 1.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0775 | C_L = -0.4870 | dP = 2.4061
+[Reproject-test] step 1630: max|u_new - u| = 1.219e-05 (max|u| = 2.149e+00)
+[Step  1640 | t = 1.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0825 | C_L = -0.5563 | dP = 2.4109
+[Reproject-test] step 1640: max|u_new - u| = 1.148e-05 (max|u| = 2.157e+00)
+[Step  1650 | t = 1.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0883 | C_L = -0.6063 | dP = 2.4172
+[Reproject-test] step 1650: max|u_new - u| = 1.141e-05 (max|u| = 2.165e+00)
+[Step  1660 | t = 1.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0942 | C_L = -0.6347 | dP = 2.4243
+[Reproject-test] step 1660: max|u_new - u| = 1.141e-05 (max|u| = 2.171e+00)
+[Step  1670 | t = 1.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0995 | C_L = -0.6404 | dP = 2.4313
+[Reproject-test] step 1670: max|u_new - u| = 1.126e-05 (max|u| = 2.176e+00)
+[Step  1680 | t = 1.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1035 | C_L = -0.6228 | dP = 2.4371
+[Reproject-test] step 1680: max|u_new - u| = 1.107e-05 (max|u| = 2.179e+00)
+[Step  1690 | t = 1.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 3.1059 | C_L = -0.5825 | dP = 2.4410
+[Reproject-test] step 1690: max|u_new - u| = 1.345e-05 (max|u| = 2.181e+00)
+[Step  1700 | t = 1.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1064 | C_L = -0.5205 | dP = 2.4424
+[Reproject-test] step 1700: max|u_new - u| = 1.374e-05 (max|u| = 2.181e+00)
+[Step  1710 | t = 1.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1050 | C_L = -0.4391 | dP = 2.4412
+[Reproject-test] step 1710: max|u_new - u| = 1.370e-05 (max|u| = 2.179e+00)
+[Step  1720 | t = 1.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1021 | C_L = -0.3408 | dP = 2.4375
+[Reproject-test] step 1720: max|u_new - u| = 1.434e-05 (max|u| = 2.176e+00)
+[Step  1730 | t = 1.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0983 | C_L = -0.2293 | dP = 2.4320
+[Reproject-test] step 1730: max|u_new - u| = 1.465e-05 (max|u| = 2.171e+00)
+[Step  1740 | t = 1.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0943 | C_L = -0.1083 | dP = 2.4255
+[Reproject-test] step 1740: max|u_new - u| = 1.463e-05 (max|u| = 2.165e+00)
+[Step  1750 | t = 1.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0908 | C_L = 0.0177 | dP = 2.4189
+[Reproject-test] step 1750: max|u_new - u| = 1.483e-05 (max|u| = 2.157e+00)
+[Step  1760 | t = 1.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.0886 | C_L = 0.1442 | dP = 2.4134
+[Reproject-test] step 1760: max|u_new - u| = 1.471e-05 (max|u| = 2.149e+00)
+[Step  1770 | t = 1.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0882 | C_L = 0.2663 | dP = 2.4099
+[Reproject-test] step 1770: max|u_new - u| = 1.439e-05 (max|u| = 2.146e+00)
+[Step  1780 | t = 1.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.0898 | C_L = 0.3794 | dP = 2.4090
+[Reproject-test] step 1780: max|u_new - u| = 1.395e-05 (max|u| = 2.155e+00)
+[Step  1790 | t = 1.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0935 | C_L = 0.4791 | dP = 2.4111
+[Reproject-test] step 1790: max|u_new - u| = 1.307e-05 (max|u| = 2.165e+00)
+[Step  1800 | t = 1.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.0988 | C_L = 0.5614 | dP = 2.4158
+[Reproject-test] step 1800: max|u_new - u| = 1.194e-05 (max|u| = 2.174e+00)
+[Step  1810 | t = 1.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1052 | C_L = 0.6229 | dP = 2.4228
+[Reproject-test] step 1810: max|u_new - u| = 1.187e-05 (max|u| = 2.182e+00)
+[Step  1820 | t = 1.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1118 | C_L = 0.6612 | dP = 2.4310
+[Reproject-test] step 1820: max|u_new - u| = 1.144e-05 (max|u| = 2.189e+00)
+[Step  1830 | t = 1.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1179 | C_L = 0.6746 | dP = 2.4393
+[Reproject-test] step 1830: max|u_new - u| = 1.091e-05 (max|u| = 2.195e+00)
+[Step  1840 | t = 1.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1226 | C_L = 0.6625 | dP = 2.4465
+[Reproject-test] step 1840: max|u_new - u| = 1.175e-05 (max|u| = 2.199e+00)
+[Step  1850 | t = 1.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1254 | C_L = 0.6252 | dP = 2.4516
+[Reproject-test] step 1850: max|u_new - u| = 1.300e-05 (max|u| = 2.201e+00)
+[Step  1860 | t = 1.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1258 | C_L = 0.5638 | dP = 2.4539
+[Reproject-test] step 1860: max|u_new - u| = 1.622e-05 (max|u| = 2.202e+00)
+[Step  1870 | t = 1.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1240 | C_L = 0.4805 | dP = 2.4531
+[Reproject-test] step 1870: max|u_new - u| = 1.632e-05 (max|u| = 2.201e+00)
+[Step  1880 | t = 1.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1204 | C_L = 0.3782 | dP = 2.4494
+[Reproject-test] step 1880: max|u_new - u| = 1.696e-05 (max|u| = 2.198e+00)
+[Step  1890 | t = 1.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1155 | C_L = 0.2605 | dP = 2.4433
+[Reproject-test] step 1890: max|u_new - u| = 1.621e-05 (max|u| = 2.194e+00)
+[Step  1900 | t = 1.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1102 | C_L = 0.1314 | dP = 2.4358
+[Reproject-test] step 1900: max|u_new - u| = 1.604e-05 (max|u| = 2.188e+00)
+[Step  1910 | t = 1.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1055 | C_L = -0.0044 | dP = 2.4281
+[Reproject-test] step 1910: max|u_new - u| = 1.579e-05 (max|u| = 2.180e+00)
+[Step  1920 | t = 1.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1021 | C_L = -0.1421 | dP = 2.4213
+[Reproject-test] step 1920: max|u_new - u| = 1.549e-05 (max|u| = 2.171e+00)
+[Step  1930 | t = 1.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1008 | C_L = -0.2765 | dP = 2.4167
+[Reproject-test] step 1930: max|u_new - u| = 1.480e-05 (max|u| = 2.162e+00)
+[Step  1940 | t = 1.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1019 | C_L = -0.4027 | dP = 2.4149
+[Reproject-test] step 1940: max|u_new - u| = 1.379e-05 (max|u| = 2.151e+00)
+[Step  1950 | t = 1.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1053 | C_L = -0.5158 | dP = 2.4165
+[Reproject-test] step 1950: max|u_new - u| = 1.315e-05 (max|u| = 2.153e+00)
+[Step  1960 | t = 1.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1108 | C_L = -0.6115 | dP = 2.4214
+[Reproject-test] step 1960: max|u_new - u| = 1.270e-05 (max|u| = 2.163e+00)
+[Step  1970 | t = 1.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1177 | C_L = -0.6860 | dP = 2.4290
+[Reproject-test] step 1970: max|u_new - u| = 1.204e-05 (max|u| = 2.172e+00)
+[Step  1980 | t = 1.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1252 | C_L = -0.7363 | dP = 2.4383
+[Reproject-test] step 1980: max|u_new - u| = 1.136e-05 (max|u| = 2.180e+00)
+[Step  1990 | t = 1.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1323 | C_L = -0.7605 | dP = 2.4480
+[Reproject-test] step 1990: max|u_new - u| = 1.111e-05 (max|u| = 2.187e+00)
+[Step  2000 | t = 2.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1379 | C_L = -0.7575 | dP = 2.4568
+[Reproject-test] step 2000: max|u_new - u| = 1.127e-05 (max|u| = 2.192e+00)
+[Step  2010 | t = 2.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1415 | C_L = -0.7271 | dP = 2.4634
+[Reproject-test] step 2010: max|u_new - u| = 1.252e-05 (max|u| = 2.195e+00)
+[Step  2020 | t = 2.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.1424 | C_L = -0.6705 | dP = 2.4668
+[Reproject-test] step 2020: max|u_new - u| = 1.632e-05 (max|u| = 2.197e+00)
+[Step  2030 | t = 2.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1407 | C_L = -0.5896 | dP = 2.4666
+[Reproject-test] step 2030: max|u_new - u| = 1.696e-05 (max|u| = 2.196e+00)
+[Step  2040 | t = 2.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1366 | C_L = -0.4869 | dP = 2.4629
+[Reproject-test] step 2040: max|u_new - u| = 1.662e-05 (max|u| = 2.193e+00)
+[Step  2050 | t = 2.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1309 | C_L = -0.3662 | dP = 2.4561
+[Reproject-test] step 2050: max|u_new - u| = 1.635e-05 (max|u| = 2.189e+00)
+[Step  2060 | t = 2.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1244 | C_L = -0.2315 | dP = 2.4473
+[Reproject-test] step 2060: max|u_new - u| = 1.630e-05 (max|u| = 2.182e+00)
+[Step  2070 | t = 2.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1182 | C_L = -0.0876 | dP = 2.4377
+[Reproject-test] step 2070: max|u_new - u| = 1.643e-05 (max|u| = 2.174e+00)
+[Step  2080 | t = 2.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1134 | C_L = 0.0603 | dP = 2.4287
+[Reproject-test] step 2080: max|u_new - u| = 1.626e-05 (max|u| = 2.165e+00)
+[Step  2090 | t = 2.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1107 | C_L = 0.2069 | dP = 2.4217
+[Reproject-test] step 2090: max|u_new - u| = 1.559e-05 (max|u| = 2.154e+00)
+[Step  2100 | t = 2.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1107 | C_L = 0.3467 | dP = 2.4178
+[Reproject-test] step 2100: max|u_new - u| = 1.464e-05 (max|u| = 2.153e+00)
+[Step  2110 | t = 2.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1135 | C_L = 0.4743 | dP = 2.4177
+[Reproject-test] step 2110: max|u_new - u| = 1.443e-05 (max|u| = 2.164e+00)
+[Step  2120 | t = 2.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,21) | C_D = 3.1189 | C_L = 0.5848 | dP = 2.4215
+[Reproject-test] step 2120: max|u_new - u| = 1.399e-05 (max|u| = 2.175e+00)
+[Step  2130 | t = 2.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1262 | C_L = 0.6740 | dP = 2.4288
+[Reproject-test] step 2130: max|u_new - u| = 1.355e-05 (max|u| = 2.185e+00)
+[Step  2140 | t = 2.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1344 | C_L = 0.7382 | dP = 2.4386
+[Reproject-test] step 2140: max|u_new - u| = 1.264e-05 (max|u| = 2.195e+00)
+[Step  2150 | t = 2.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1425 | C_L = 0.7750 | dP = 2.4495
+[Reproject-test] step 2150: max|u_new - u| = 1.106e-05 (max|u| = 2.202e+00)
+[Step  2160 | t = 2.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1494 | C_L = 0.7829 | dP = 2.4599
+[Reproject-test] step 2160: max|u_new - u| = 1.078e-05 (max|u| = 2.209e+00)
+[Step  2170 | t = 2.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1541 | C_L = 0.7617 | dP = 2.4683
+[Reproject-test] step 2170: max|u_new - u| = 1.296e-05 (max|u| = 2.213e+00)
+[Step  2180 | t = 2.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1560 | C_L = 0.7119 | dP = 2.4737
+[Reproject-test] step 2180: max|u_new - u| = 1.429e-05 (max|u| = 2.215e+00)
+[Step  2190 | t = 2.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1548 | C_L = 0.6355 | dP = 2.4751
+[Reproject-test] step 2190: max|u_new - u| = 1.791e-05 (max|u| = 2.215e+00)
+[Step  2200 | t = 2.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1509 | C_L = 0.5350 | dP = 2.4725
+[Reproject-test] step 2200: max|u_new - u| = 1.916e-05 (max|u| = 2.213e+00)
+[Step  2210 | t = 2.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1449 | C_L = 0.4141 | dP = 2.4663
+[Reproject-test] step 2210: max|u_new - u| = 1.908e-05 (max|u| = 2.209e+00)
+[Step  2220 | t = 2.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1377 | C_L = 0.2768 | dP = 2.4574
+[Reproject-test] step 2220: max|u_new - u| = 1.749e-05 (max|u| = 2.203e+00)
+[Step  2230 | t = 2.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1305 | C_L = 0.1280 | dP = 2.4472
+[Reproject-test] step 2230: max|u_new - u| = 1.694e-05 (max|u| = 2.196e+00)
+[Step  2240 | t = 2.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1244 | C_L = -0.0271 | dP = 2.4372
+[Reproject-test] step 2240: max|u_new - u| = 1.653e-05 (max|u| = 2.187e+00)
+[Step  2250 | t = 2.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,23) | C_D = 3.1204 | C_L = -0.1829 | dP = 2.4288
+[Reproject-test] step 2250: max|u_new - u| = 1.578e-05 (max|u| = 2.176e+00)
+[Step  2260 | t = 2.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1191 | C_L = -0.3338 | dP = 2.4235
+[Reproject-test] step 2260: max|u_new - u| = 1.545e-05 (max|u| = 2.165e+00)
+[Step  2270 | t = 2.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1210 | C_L = -0.4742 | dP = 2.4220
+[Reproject-test] step 2270: max|u_new - u| = 1.537e-05 (max|u| = 2.154e+00)
+[Step  2280 | t = 2.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1257 | C_L = -0.5987 | dP = 2.4248
+[Reproject-test] step 2280: max|u_new - u| = 1.550e-05 (max|u| = 2.160e+00)
+[Step  2290 | t = 2.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1329 | C_L = -0.7027 | dP = 2.4317
+[Reproject-test] step 2290: max|u_new - u| = 1.463e-05 (max|u| = 2.171e+00)
+[Step  2300 | t = 2.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1415 | C_L = -0.7821 | dP = 2.4416
+[Reproject-test] step 2300: max|u_new - u| = 1.328e-05 (max|u| = 2.182e+00)
+[Step  2310 | t = 2.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1505 | C_L = -0.8339 | dP = 2.4534
+[Reproject-test] step 2310: max|u_new - u| = 1.223e-05 (max|u| = 2.190e+00)
+[Step  2320 | t = 2.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1585 | C_L = -0.8561 | dP = 2.4653
+[Reproject-test] step 2320: max|u_new - u| = 1.099e-05 (max|u| = 2.198e+00)
+[Step  2330 | t = 2.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1646 | C_L = -0.8479 | dP = 2.4755
+[Reproject-test] step 2330: max|u_new - u| = 1.177e-05 (max|u| = 2.203e+00)
+[Step  2340 | t = 2.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1677 | C_L = -0.8094 | dP = 2.4827
+[Reproject-test] step 2340: max|u_new - u| = 1.347e-05 (max|u| = 2.207e+00)
+[Step  2350 | t = 2.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 3.1677 | C_L = -0.7420 | dP = 2.4859
+[Reproject-test] step 2350: max|u_new - u| = 1.749e-05 (max|u| = 2.208e+00)
+[Step  2360 | t = 2.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1643 | C_L = -0.6481 | dP = 2.4845
+[Reproject-test] step 2360: max|u_new - u| = 1.883e-05 (max|u| = 2.207e+00)
+[Step  2370 | t = 2.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1583 | C_L = -0.5309 | dP = 2.4789
+[Reproject-test] step 2370: max|u_new - u| = 1.770e-05 (max|u| = 2.204e+00)
+[Step  2380 | t = 2.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1505 | C_L = -0.3945 | dP = 2.4698
+[Reproject-test] step 2380: max|u_new - u| = 1.744e-05 (max|u| = 2.198e+00)
+[Step  2390 | t = 2.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1422 | C_L = -0.2435 | dP = 2.4585
+[Reproject-test] step 2390: max|u_new - u| = 1.757e-05 (max|u| = 2.191e+00)
+[Step  2400 | t = 2.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1346 | C_L = -0.0832 | dP = 2.4466
+[Reproject-test] step 2400: max|u_new - u| = 1.712e-05 (max|u| = 2.181e+00)
+[Step  2410 | t = 2.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1289 | C_L = 0.0806 | dP = 2.4357
+[Reproject-test] step 2410: max|u_new - u| = 1.650e-05 (max|u| = 2.171e+00)
+[Step  2420 | t = 2.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1259 | C_L = 0.2420 | dP = 2.4276
+[Reproject-test] step 2420: max|u_new - u| = 1.690e-05 (max|u| = 2.159e+00)
+[Step  2430 | t = 2.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1263 | C_L = 0.3951 | dP = 2.4234
+[Reproject-test] step 2430: max|u_new - u| = 1.659e-05 (max|u| = 2.157e+00)
+[Step  2440 | t = 2.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1300 | C_L = 0.5340 | dP = 2.4238
+[Reproject-test] step 2440: max|u_new - u| = 1.644e-05 (max|u| = 2.169e+00)
+[Step  2450 | t = 2.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1367 | C_L = 0.6534 | dP = 2.4289
+[Reproject-test] step 2450: max|u_new - u| = 1.600e-05 (max|u| = 2.181e+00)
+[Step  2460 | t = 2.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1454 | C_L = 0.7487 | dP = 2.4380
+[Reproject-test] step 2460: max|u_new - u| = 1.540e-05 (max|u| = 2.193e+00)
+[Step  2470 | t = 2.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1551 | C_L = 0.8162 | dP = 2.4498
+[Reproject-test] step 2470: max|u_new - u| = 1.413e-05 (max|u| = 2.203e+00)
+[Step  2480 | t = 2.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1642 | C_L = 0.8534 | dP = 2.4627
+[Reproject-test] step 2480: max|u_new - u| = 1.237e-05 (max|u| = 2.211e+00)
+[Step  2490 | t = 2.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1717 | C_L = 0.8590 | dP = 2.4747
+[Reproject-test] step 2490: max|u_new - u| = 1.190e-05 (max|u| = 2.218e+00)
+[Step  2500 | t = 2.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1764 | C_L = 0.8329 | dP = 2.4841
+[Reproject-test] step 2500: max|u_new - u| = 1.403e-05 (max|u| = 2.222e+00)
+[Step  2510 | t = 2.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1776 | C_L = 0.7759 | dP = 2.4896
+[Reproject-test] step 2510: max|u_new - u| = 1.515e-05 (max|u| = 2.224e+00)
+[Step  2520 | t = 2.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1754 | C_L = 0.6904 | dP = 2.4904
+[Reproject-test] step 2520: max|u_new - u| = 1.880e-05 (max|u| = 2.224e+00)
+[Step  2530 | t = 2.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1700 | C_L = 0.5792 | dP = 2.4866
+[Reproject-test] step 2530: max|u_new - u| = 2.082e-05 (max|u| = 2.221e+00)
+[Step  2540 | t = 2.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1623 | C_L = 0.4464 | dP = 2.4787
+[Reproject-test] step 2540: max|u_new - u| = 1.944e-05 (max|u| = 2.217e+00)
+[Step  2550 | t = 2.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1535 | C_L = 0.2965 | dP = 2.4680
+[Reproject-test] step 2550: max|u_new - u| = 1.819e-05 (max|u| = 2.210e+00)
+[Step  2560 | t = 2.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1449 | C_L = 0.1348 | dP = 2.4558
+[Reproject-test] step 2560: max|u_new - u| = 1.773e-05 (max|u| = 2.202e+00)
+[Step  2570 | t = 2.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1378 | C_L = -0.0332 | dP = 2.4441
+[Reproject-test] step 2570: max|u_new - u| = 1.669e-05 (max|u| = 2.192e+00)
+[Step  2580 | t = 2.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1332 | C_L = -0.2014 | dP = 2.4345
+[Reproject-test] step 2580: max|u_new - u| = 1.658e-05 (max|u| = 2.181e+00)
+[Step  2590 | t = 2.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1320 | C_L = -0.3637 | dP = 2.4284
+[Reproject-test] step 2590: max|u_new - u| = 1.718e-05 (max|u| = 2.169e+00)
+[Step  2600 | t = 2.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1343 | C_L = -0.5142 | dP = 2.4270
+[Reproject-test] step 2600: max|u_new - u| = 1.714e-05 (max|u| = 2.156e+00)
+[Step  2610 | t = 2.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1399 | C_L = -0.6473 | dP = 2.4305
+[Reproject-test] step 2610: max|u_new - u| = 1.712e-05 (max|u| = 2.164e+00)
+[Step  2620 | t = 2.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1481 | C_L = -0.7578 | dP = 2.4386
+[Reproject-test] step 2620: max|u_new - u| = 1.597e-05 (max|u| = 2.176e+00)
+[Step  2630 | t = 2.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1578 | C_L = -0.8417 | dP = 2.4501
+[Reproject-test] step 2630: max|u_new - u| = 1.467e-05 (max|u| = 2.187e+00)
+[Step  2640 | t = 2.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1677 | C_L = -0.8958 | dP = 2.4636
+[Reproject-test] step 2640: max|u_new - u| = 1.335e-05 (max|u| = 2.197e+00)
+[Step  2650 | t = 2.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1765 | C_L = -0.9180 | dP = 2.4769
+[Reproject-test] step 2650: max|u_new - u| = 1.154e-05 (max|u| = 2.205e+00)
+[Step  2660 | t = 2.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1827 | C_L = -0.9077 | dP = 2.4882
+[Reproject-test] step 2660: max|u_new - u| = 1.236e-05 (max|u| = 2.210e+00)
+[Step  2670 | t = 2.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1857 | C_L = -0.8651 | dP = 2.4959
+[Reproject-test] step 2670: max|u_new - u| = 1.432e-05 (max|u| = 2.214e+00)
+[Step  2680 | t = 2.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 3.1849 | C_L = -0.7920 | dP = 2.4989
+[Reproject-test] step 2680: max|u_new - u| = 1.811e-05 (max|u| = 2.215e+00)
+[Step  2690 | t = 2.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1805 | C_L = -0.6908 | dP = 2.4969
+[Reproject-test] step 2690: max|u_new - u| = 1.959e-05 (max|u| = 2.214e+00)
+[Step  2700 | t = 2.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1732 | C_L = -0.5652 | dP = 2.4900
+[Reproject-test] step 2700: max|u_new - u| = 1.838e-05 (max|u| = 2.210e+00)
+[Step  2710 | t = 2.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1641 | C_L = -0.4193 | dP = 2.4794
+[Reproject-test] step 2710: max|u_new - u| = 1.796e-05 (max|u| = 2.204e+00)
+[Step  2720 | t = 2.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1545 | C_L = -0.2584 | dP = 2.4665
+[Reproject-test] step 2720: max|u_new - u| = 1.795e-05 (max|u| = 2.196e+00)
+[Step  2730 | t = 2.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1458 | C_L = -0.0880 | dP = 2.4530
+[Reproject-test] step 2730: max|u_new - u| = 1.756e-05 (max|u| = 2.186e+00)
+[Step  2740 | t = 2.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1394 | C_L = 0.0859 | dP = 2.4408
+[Reproject-test] step 2740: max|u_new - u| = 1.751e-05 (max|u| = 2.175e+00)
+[Step  2750 | t = 2.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1361 | C_L = 0.2570 | dP = 2.4318
+[Reproject-test] step 2750: max|u_new - u| = 1.834e-05 (max|u| = 2.162e+00)
+[Step  2760 | t = 2.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1366 | C_L = 0.4189 | dP = 2.4271
+[Reproject-test] step 2760: max|u_new - u| = 1.787e-05 (max|u| = 2.159e+00)
+[Step  2770 | t = 2.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1408 | C_L = 0.5655 | dP = 2.4277
+[Reproject-test] step 2770: max|u_new - u| = 1.778e-05 (max|u| = 2.172e+00)
+[Step  2780 | t = 2.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1482 | C_L = 0.6914 | dP = 2.4334
+[Reproject-test] step 2780: max|u_new - u| = 1.732e-05 (max|u| = 2.185e+00)
+[Step  2790 | t = 2.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1578 | C_L = 0.7916 | dP = 2.4436
+[Reproject-test] step 2790: max|u_new - u| = 1.663e-05 (max|u| = 2.197e+00)
+[Step  2800 | t = 2.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1683 | C_L = 0.8623 | dP = 2.4567
+[Reproject-test] step 2800: max|u_new - u| = 1.512e-05 (max|u| = 2.207e+00)
+[Step  2810 | t = 2.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1781 | C_L = 0.9011 | dP = 2.4708
+[Reproject-test] step 2810: max|u_new - u| = 1.330e-05 (max|u| = 2.216e+00)
+[Step  2820 | t = 2.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1859 | C_L = 0.9065 | dP = 2.4839
+[Reproject-test] step 2820: max|u_new - u| = 1.243e-05 (max|u| = 2.223e+00)
+[Step  2830 | t = 2.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1906 | C_L = 0.8786 | dP = 2.4940
+[Reproject-test] step 2830: max|u_new - u| = 1.463e-05 (max|u| = 2.228e+00)
+[Step  2840 | t = 2.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1916 | C_L = 0.8184 | dP = 2.4998
+[Reproject-test] step 2840: max|u_new - u| = 1.575e-05 (max|u| = 2.230e+00)
+[Step  2850 | t = 2.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1886 | C_L = 0.7283 | dP = 2.5004
+[Reproject-test] step 2850: max|u_new - u| = 1.930e-05 (max|u| = 2.230e+00)
+[Step  2860 | t = 2.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1823 | C_L = 0.6115 | dP = 2.4959
+[Reproject-test] step 2860: max|u_new - u| = 2.145e-05 (max|u| = 2.227e+00)
+[Step  2870 | t = 2.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1736 | C_L = 0.4722 | dP = 2.4870
+[Reproject-test] step 2870: max|u_new - u| = 2.015e-05 (max|u| = 2.222e+00)
+[Step  2880 | t = 2.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1638 | C_L = 0.3153 | dP = 2.4751
+[Reproject-test] step 2880: max|u_new - u| = 1.841e-05 (max|u| = 2.215e+00)
+[Step  2890 | t = 2.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1542 | C_L = 0.1460 | dP = 2.4617
+[Reproject-test] step 2890: max|u_new - u| = 1.801e-05 (max|u| = 2.206e+00)
+[Step  2900 | t = 2.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1464 | C_L = -0.0297 | dP = 2.4488
+[Reproject-test] step 2900: max|u_new - u| = 1.713e-05 (max|u| = 2.196e+00)
+[Step  2910 | t = 2.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1414 | C_L = -0.2055 | dP = 2.4383
+[Reproject-test] step 2910: max|u_new - u| = 1.758e-05 (max|u| = 2.184e+00)
+[Step  2920 | t = 2.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1400 | C_L = -0.3751 | dP = 2.4317
+[Reproject-test] step 2920: max|u_new - u| = 1.824e-05 (max|u| = 2.171e+00)
+[Step  2930 | t = 2.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1424 | C_L = -0.5323 | dP = 2.4301
+[Reproject-test] step 2930: max|u_new - u| = 1.822e-05 (max|u| = 2.158e+00)
+[Step  2940 | t = 2.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1484 | C_L = -0.6713 | dP = 2.4338
+[Reproject-test] step 2940: max|u_new - u| = 1.815e-05 (max|u| = 2.167e+00)
+[Step  2950 | t = 2.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1572 | C_L = -0.7868 | dP = 2.4425
+[Reproject-test] step 2950: max|u_new - u| = 1.685e-05 (max|u| = 2.179e+00)
+[Step  2960 | t = 2.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1675 | C_L = -0.8746 | dP = 2.4549
+[Reproject-test] step 2960: max|u_new - u| = 1.556e-05 (max|u| = 2.190e+00)
+[Step  2970 | t = 2.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1780 | C_L = -0.9313 | dP = 2.4693
+[Reproject-test] step 2970: max|u_new - u| = 1.410e-05 (max|u| = 2.200e+00)
+[Step  2980 | t = 2.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1872 | C_L = -0.9549 | dP = 2.4836
+[Reproject-test] step 2980: max|u_new - u| = 1.225e-05 (max|u| = 2.209e+00)
+[Step  2990 | t = 2.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1937 | C_L = -0.9446 | dP = 2.4957
+[Reproject-test] step 2990: max|u_new - u| = 1.247e-05 (max|u| = 2.215e+00)
+[Step  3000 | t = 3.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1966 | C_L = -0.9010 | dP = 2.5038
+[Reproject-test] step 3000: max|u_new - u| = 1.498e-05 (max|u| = 2.218e+00)
+[Step  3010 | t = 3.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 3.1955 | C_L = -0.8256 | dP = 2.5070
+[Reproject-test] step 3010: max|u_new - u| = 1.839e-05 (max|u| = 2.220e+00)
+[Step  3020 | t = 3.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1905 | C_L = -0.7212 | dP = 2.5046
+[Reproject-test] step 3020: max|u_new - u| = 1.974e-05 (max|u| = 2.218e+00)
+[Step  3030 | t = 3.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1825 | C_L = -0.5914 | dP = 2.4972
+[Reproject-test] step 3030: max|u_new - u| = 1.842e-05 (max|u| = 2.215e+00)
+[Step  3040 | t = 3.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1726 | C_L = -0.4408 | dP = 2.4858
+[Reproject-test] step 3040: max|u_new - u| = 1.807e-05 (max|u| = 2.209e+00)
+[Step  3050 | t = 3.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1622 | C_L = -0.2745 | dP = 2.4719
+[Reproject-test] step 3050: max|u_new - u| = 1.799e-05 (max|u| = 2.200e+00)
+[Step  3060 | t = 3.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1528 | C_L = -0.0983 | dP = 2.4574
+[Reproject-test] step 3060: max|u_new - u| = 1.769e-05 (max|u| = 2.190e+00)
+[Step  3070 | t = 3.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1458 | C_L = 0.0815 | dP = 2.4443
+[Reproject-test] step 3070: max|u_new - u| = 1.833e-05 (max|u| = 2.178e+00)
+[Step  3080 | t = 3.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1423 | C_L = 0.2585 | dP = 2.4345
+[Reproject-test] step 3080: max|u_new - u| = 1.920e-05 (max|u| = 2.165e+00)
+[Step  3090 | t = 3.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1427 | C_L = 0.4261 | dP = 2.4294
+[Reproject-test] step 3090: max|u_new - u| = 1.872e-05 (max|u| = 2.160e+00)
+[Step  3100 | t = 3.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1470 | C_L = 0.5782 | dP = 2.4299
+[Reproject-test] step 3100: max|u_new - u| = 1.861e-05 (max|u| = 2.173e+00)
+[Step  3110 | t = 3.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1547 | C_L = 0.7088 | dP = 2.4358
+[Reproject-test] step 3110: max|u_new - u| = 1.813e-05 (max|u| = 2.186e+00)
+[Step  3120 | t = 3.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1648 | C_L = 0.8130 | dP = 2.4464
+[Reproject-test] step 3120: max|u_new - u| = 1.740e-05 (max|u| = 2.199e+00)
+[Step  3130 | t = 3.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1757 | C_L = 0.8870 | dP = 2.4602
+[Reproject-test] step 3130: max|u_new - u| = 1.579e-05 (max|u| = 2.210e+00)
+[Step  3140 | t = 3.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1860 | C_L = 0.9281 | dP = 2.4751
+[Reproject-test] step 3140: max|u_new - u| = 1.392e-05 (max|u| = 2.219e+00)
+[Step  3150 | t = 3.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1941 | C_L = 0.9349 | dP = 2.4889
+[Reproject-test] step 3150: max|u_new - u| = 1.257e-05 (max|u| = 2.226e+00)
+[Step  3160 | t = 3.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1989 | C_L = 0.9073 | dP = 2.4996
+[Reproject-test] step 3160: max|u_new - u| = 1.490e-05 (max|u| = 2.231e+00)
+[Step  3170 | t = 3.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1998 | C_L = 0.8465 | dP = 2.5057
+[Reproject-test] step 3170: max|u_new - u| = 1.613e-05 (max|u| = 2.233e+00)
+[Step  3180 | t = 3.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1966 | C_L = 0.7550 | dP = 2.5064
+[Reproject-test] step 3180: max|u_new - u| = 1.950e-05 (max|u| = 2.233e+00)
+[Step  3190 | t = 3.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1899 | C_L = 0.6361 | dP = 2.5017
+[Reproject-test] step 3190: max|u_new - u| = 2.147e-05 (max|u| = 2.230e+00)
+[Step  3200 | t = 3.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1806 | C_L = 0.4939 | dP = 2.4924
+[Reproject-test] step 3200: max|u_new - u| = 2.066e-05 (max|u| = 2.225e+00)
+[Step  3210 | t = 3.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1702 | C_L = 0.3335 | dP = 2.4798
+[Reproject-test] step 3210: max|u_new - u| = 1.844e-05 (max|u| = 2.218e+00)
+[Step  3220 | t = 3.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1601 | C_L = 0.1603 | dP = 2.4657
+[Reproject-test] step 3220: max|u_new - u| = 1.812e-05 (max|u| = 2.209e+00)
+[Step  3230 | t = 3.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1517 | C_L = -0.0197 | dP = 2.4521
+[Reproject-test] step 3230: max|u_new - u| = 1.768e-05 (max|u| = 2.199e+00)
+[Step  3240 | t = 3.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1463 | C_L = -0.2000 | dP = 2.4409
+[Reproject-test] step 3240: max|u_new - u| = 1.818e-05 (max|u| = 2.186e+00)
+[Step  3250 | t = 3.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1446 | C_L = -0.3743 | dP = 2.4337
+[Reproject-test] step 3250: max|u_new - u| = 1.886e-05 (max|u| = 2.173e+00)
+[Step  3260 | t = 3.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1470 | C_L = -0.5361 | dP = 2.4318
+[Reproject-test] step 3260: max|u_new - u| = 1.884e-05 (max|u| = 2.160e+00)
+[Step  3270 | t = 3.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1530 | C_L = -0.6794 | dP = 2.4354
+[Reproject-test] step 3270: max|u_new - u| = 1.878e-05 (max|u| = 2.167e+00)
+[Step  3280 | t = 3.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1620 | C_L = -0.7990 | dP = 2.4442
+[Reproject-test] step 3280: max|u_new - u| = 1.745e-05 (max|u| = 2.180e+00)
+[Step  3290 | t = 3.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1727 | C_L = -0.8903 | dP = 2.4571
+[Reproject-test] step 3290: max|u_new - u| = 1.613e-05 (max|u| = 2.192e+00)
+[Step  3300 | t = 3.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1836 | C_L = -0.9499 | dP = 2.4720
+[Reproject-test] step 3300: max|u_new - u| = 1.462e-05 (max|u| = 2.202e+00)
+[Step  3310 | t = 3.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1931 | C_L = -0.9758 | dP = 2.4869
+[Reproject-test] step 3310: max|u_new - u| = 1.274e-05 (max|u| = 2.210e+00)
+[Step  3320 | t = 3.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1998 | C_L = -0.9671 | dP = 2.4996
+[Reproject-test] step 3320: max|u_new - u| = 1.226e-05 (max|u| = 2.217e+00)
+[Step  3330 | t = 3.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2029 | C_L = -0.9243 | dP = 2.5082
+[Reproject-test] step 3330: max|u_new - u| = 1.530e-05 (max|u| = 2.221e+00)
+[Step  3340 | t = 3.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,25) | C_D = 3.2017 | C_L = -0.8490 | dP = 2.5116
+[Reproject-test] step 3340: max|u_new - u| = 1.841e-05 (max|u| = 2.222e+00)
+[Step  3350 | t = 3.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1966 | C_L = -0.7439 | dP = 2.5094
+[Reproject-test] step 3350: max|u_new - u| = 1.947e-05 (max|u| = 2.221e+00)
+[Step  3360 | t = 3.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1883 | C_L = -0.6129 | dP = 2.5018
+[Reproject-test] step 3360: max|u_new - u| = 1.811e-05 (max|u| = 2.217e+00)
+[Step  3370 | t = 3.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1779 | C_L = -0.4603 | dP = 2.4901
+[Reproject-test] step 3370: max|u_new - u| = 1.856e-05 (max|u| = 2.211e+00)
+[Step  3380 | t = 3.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1671 | C_L = -0.2915 | dP = 2.4757
+[Reproject-test] step 3380: max|u_new - u| = 1.782e-05 (max|u| = 2.203e+00)
+[Step  3390 | t = 3.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1572 | C_L = -0.1124 | dP = 2.4606
+[Reproject-test] step 3390: max|u_new - u| = 1.763e-05 (max|u| = 2.193e+00)
+[Step  3400 | t = 3.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1498 | C_L = 0.0708 | dP = 2.4469
+[Reproject-test] step 3400: max|u_new - u| = 1.877e-05 (max|u| = 2.181e+00)
+[Step  3410 | t = 3.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1459 | C_L = 0.2515 | dP = 2.4365
+[Reproject-test] step 3410: max|u_new - u| = 1.969e-05 (max|u| = 2.167e+00)
+[Step  3420 | t = 3.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1460 | C_L = 0.4229 | dP = 2.4309
+[Reproject-test] step 3420: max|u_new - u| = 1.921e-05 (max|u| = 2.159e+00)
+[Step  3430 | t = 3.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1503 | C_L = 0.5788 | dP = 2.4309
+[Reproject-test] step 3430: max|u_new - u| = 1.911e-05 (max|u| = 2.173e+00)
+[Step  3440 | t = 3.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1580 | C_L = 0.7133 | dP = 2.4368
+[Reproject-test] step 3440: max|u_new - u| = 1.863e-05 (max|u| = 2.187e+00)
+[Step  3450 | t = 3.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1682 | C_L = 0.8211 | dP = 2.4475
+[Reproject-test] step 3450: max|u_new - u| = 1.790e-05 (max|u| = 2.199e+00)
+[Step  3460 | t = 3.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1794 | C_L = 0.8984 | dP = 2.4616
+[Reproject-test] step 3460: max|u_new - u| = 1.627e-05 (max|u| = 2.211e+00)
+[Step  3470 | t = 3.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1900 | C_L = 0.9423 | dP = 2.4769
+[Reproject-test] step 3470: max|u_new - u| = 1.435e-05 (max|u| = 2.220e+00)
+[Step  3480 | t = 3.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1985 | C_L = 0.9514 | dP = 2.4912
+[Reproject-test] step 3480: max|u_new - u| = 1.246e-05 (max|u| = 2.227e+00)
+[Step  3490 | t = 3.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2035 | C_L = 0.9256 | dP = 2.5024
+[Reproject-test] step 3490: max|u_new - u| = 1.493e-05 (max|u| = 2.233e+00)
+[Step  3500 | t = 3.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2046 | C_L = 0.8660 | dP = 2.5089
+[Reproject-test] step 3500: max|u_new - u| = 1.632e-05 (max|u| = 2.235e+00)
+[Step  3510 | t = 3.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2014 | C_L = 0.7750 | dP = 2.5099
+[Reproject-test] step 3510: max|u_new - u| = 1.945e-05 (max|u| = 2.235e+00)
+[Step  3520 | t = 3.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1946 | C_L = 0.6560 | dP = 2.5053
+[Reproject-test] step 3520: max|u_new - u| = 2.105e-05 (max|u| = 2.233e+00)
+[Step  3530 | t = 3.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1851 | C_L = 0.5132 | dP = 2.4960
+[Reproject-test] step 3530: max|u_new - u| = 2.135e-05 (max|u| = 2.227e+00)
+[Step  3540 | t = 3.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1743 | C_L = 0.3515 | dP = 2.4832
+[Reproject-test] step 3540: max|u_new - u| = 1.855e-05 (max|u| = 2.220e+00)
+[Step  3550 | t = 3.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1638 | C_L = 0.1765 | dP = 2.4687
+[Reproject-test] step 3550: max|u_new - u| = 1.807e-05 (max|u| = 2.211e+00)
+[Step  3560 | t = 3.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1550 | C_L = -0.0057 | dP = 2.4546
+[Reproject-test] step 3560: max|u_new - u| = 1.793e-05 (max|u| = 2.201e+00)
+[Step  3570 | t = 3.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1492 | C_L = -0.1888 | dP = 2.4428
+[Reproject-test] step 3570: max|u_new - u| = 1.853e-05 (max|u| = 2.188e+00)
+[Step  3580 | t = 3.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1472 | C_L = -0.3660 | dP = 2.4351
+[Reproject-test] step 3580: max|u_new - u| = 1.921e-05 (max|u| = 2.175e+00)
+[Step  3590 | t = 3.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1493 | C_L = -0.5311 | dP = 2.4327
+[Reproject-test] step 3590: max|u_new - u| = 1.916e-05 (max|u| = 2.162e+00)
+[Step  3600 | t = 3.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1553 | C_L = -0.6779 | dP = 2.4360
+[Reproject-test] step 3600: max|u_new - u| = 1.918e-05 (max|u| = 2.167e+00)
+[Step  3610 | t = 3.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1643 | C_L = -0.8009 | dP = 2.4447
+[Reproject-test] step 3610: max|u_new - u| = 1.787e-05 (max|u| = 2.180e+00)
+[Step  3620 | t = 3.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1751 | C_L = -0.8955 | dP = 2.4576
+[Reproject-test] step 3620: max|u_new - u| = 1.650e-05 (max|u| = 2.192e+00)
+[Step  3630 | t = 3.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1862 | C_L = -0.9583 | dP = 2.4728
+[Reproject-test] step 3630: max|u_new - u| = 1.500e-05 (max|u| = 2.202e+00)
+[Step  3640 | t = 3.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1960 | C_L = -0.9871 | dP = 2.4881
+[Reproject-test] step 3640: max|u_new - u| = 1.307e-05 (max|u| = 2.211e+00)
+[Step  3650 | t = 3.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2031 | C_L = -0.9808 | dP = 2.5013
+[Reproject-test] step 3650: max|u_new - u| = 1.260e-05 (max|u| = 2.218e+00)
+[Step  3660 | t = 3.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2064 | C_L = -0.9400 | dP = 2.5104
+[Reproject-test] step 3660: max|u_new - u| = 1.536e-05 (max|u| = 2.222e+00)
+[Step  3670 | t = 3.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2054 | C_L = -0.8661 | dP = 2.5142
+[Reproject-test] step 3670: max|u_new - u| = 1.822e-05 (max|u| = 2.224e+00)
+[Step  3680 | t = 3.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2004 | C_L = -0.7620 | dP = 2.5123
+[Reproject-test] step 3680: max|u_new - u| = 1.889e-05 (max|u| = 2.223e+00)
+[Step  3690 | t = 3.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1920 | C_L = -0.6313 | dP = 2.5049
+[Reproject-test] step 3690: max|u_new - u| = 1.885e-05 (max|u| = 2.219e+00)
+[Step  3700 | t = 3.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1815 | C_L = -0.4786 | dP = 2.4931
+[Reproject-test] step 3700: max|u_new - u| = 1.930e-05 (max|u| = 2.213e+00)
+[Step  3710 | t = 3.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1703 | C_L = -0.3090 | dP = 2.4785
+[Reproject-test] step 3710: max|u_new - u| = 1.797e-05 (max|u| = 2.205e+00)
+[Step  3720 | t = 3.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1601 | C_L = -0.1286 | dP = 2.4631
+[Reproject-test] step 3720: max|u_new - u| = 1.739e-05 (max|u| = 2.194e+00)
+[Step  3730 | t = 3.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1523 | C_L = 0.0564 | dP = 2.4489
+[Reproject-test] step 3730: max|u_new - u| = 1.896e-05 (max|u| = 2.182e+00)
+[Step  3740 | t = 3.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1480 | C_L = 0.2394 | dP = 2.4380
+[Reproject-test] step 3740: max|u_new - u| = 1.995e-05 (max|u| = 2.169e+00)
+[Step  3750 | t = 3.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1478 | C_L = 0.4135 | dP = 2.4318
+[Reproject-test] step 3750: max|u_new - u| = 1.956e-05 (max|u| = 2.159e+00)
+[Step  3760 | t = 3.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1518 | C_L = 0.5725 | dP = 2.4314
+[Reproject-test] step 3760: max|u_new - u| = 1.941e-05 (max|u| = 2.173e+00)
+[Step  3770 | t = 3.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1595 | C_L = 0.7101 | dP = 2.4369
+[Reproject-test] step 3770: max|u_new - u| = 1.893e-05 (max|u| = 2.186e+00)
+[Step  3780 | t = 3.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1697 | C_L = 0.8213 | dP = 2.4475
+[Reproject-test] step 3780: max|u_new - u| = 1.823e-05 (max|u| = 2.199e+00)
+[Step  3790 | t = 3.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1810 | C_L = 0.9018 | dP = 2.4616
+[Reproject-test] step 3790: max|u_new - u| = 1.664e-05 (max|u| = 2.211e+00)
+[Step  3800 | t = 3.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1918 | C_L = 0.9489 | dP = 2.4772
+[Reproject-test] step 3800: max|u_new - u| = 1.466e-05 (max|u| = 2.220e+00)
+[Step  3810 | t = 3.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,20) | C_D = 3.2006 | C_L = 0.9608 | dP = 2.4919
+[Reproject-test] step 3810: max|u_new - u| = 1.264e-05 (max|u| = 2.228e+00)
+[Step  3820 | t = 3.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2060 | C_L = 0.9376 | dP = 2.5035
+[Reproject-test] step 3820: max|u_new - u| = 1.473e-05 (max|u| = 2.233e+00)
+[Step  3830 | t = 3.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2073 | C_L = 0.8801 | dP = 2.5105
+[Reproject-test] step 3830: max|u_new - u| = 1.630e-05 (max|u| = 2.236e+00)
+[Step  3840 | t = 3.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2043 | C_L = 0.7908 | dP = 2.5119
+[Reproject-test] step 3840: max|u_new - u| = 1.929e-05 (max|u| = 2.236e+00)
+[Step  3850 | t = 3.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1976 | C_L = 0.6730 | dP = 2.5077
+[Reproject-test] step 3850: max|u_new - u| = 2.031e-05 (max|u| = 2.234e+00)
+[Step  3860 | t = 3.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1881 | C_L = 0.5307 | dP = 2.4985
+[Reproject-test] step 3860: max|u_new - u| = 2.220e-05 (max|u| = 2.229e+00)
+[Step  3870 | t = 3.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1771 | C_L = 0.3691 | dP = 2.4857
+[Reproject-test] step 3870: max|u_new - u| = 1.913e-05 (max|u| = 2.222e+00)
+[Step  3880 | t = 3.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1664 | C_L = 0.1936 | dP = 2.4710
+[Reproject-test] step 3880: max|u_new - u| = 1.782e-05 (max|u| = 2.213e+00)
+[Step  3890 | t = 3.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1573 | C_L = 0.0104 | dP = 2.4566
+[Reproject-test] step 3890: max|u_new - u| = 1.801e-05 (max|u| = 2.202e+00)
+[Step  3900 | t = 3.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1511 | C_L = -0.1742 | dP = 2.4443
+[Reproject-test] step 3900: max|u_new - u| = 1.872e-05 (max|u| = 2.190e+00)
+[Step  3910 | t = 3.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1487 | C_L = -0.3535 | dP = 2.4361
+[Reproject-test] step 3910: max|u_new - u| = 1.939e-05 (max|u| = 2.177e+00)
+[Step  3920 | t = 3.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1505 | C_L = -0.5211 | dP = 2.4332
+[Reproject-test] step 3920: max|u_new - u| = 1.930e-05 (max|u| = 2.163e+00)
+[Step  3930 | t = 3.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1562 | C_L = -0.6707 | dP = 2.4361
+[Reproject-test] step 3930: max|u_new - u| = 1.942e-05 (max|u| = 2.166e+00)
+[Step  3940 | t = 3.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1651 | C_L = -0.7968 | dP = 2.4445
+[Reproject-test] step 3940: max|u_new - u| = 1.819e-05 (max|u| = 2.179e+00)
+[Step  3950 | t = 3.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1760 | C_L = -0.8947 | dP = 2.4573
+[Reproject-test] step 3950: max|u_new - u| = 1.675e-05 (max|u| = 2.192e+00)
+[Step  3960 | t = 3.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1872 | C_L = -0.9607 | dP = 2.4726
+[Reproject-test] step 3960: max|u_new - u| = 1.530e-05 (max|u| = 2.202e+00)
+[Step  3970 | t = 3.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1972 | C_L = -0.9926 | dP = 2.4881
+[Reproject-test] step 3970: max|u_new - u| = 1.331e-05 (max|u| = 2.211e+00)
+[Step  3980 | t = 3.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2046 | C_L = -0.9893 | dP = 2.5017
+[Reproject-test] step 3980: max|u_new - u| = 1.281e-05 (max|u| = 2.218e+00)
+[Step  3990 | t = 3.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2082 | C_L = -0.9511 | dP = 2.5113
+[Reproject-test] step 3990: max|u_new - u| = 1.522e-05 (max|u| = 2.222e+00)
+[Step  4000 | t = 4.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2076 | C_L = -0.8796 | dP = 2.5156
+[Reproject-test] step 4000: max|u_new - u| = 1.783e-05 (max|u| = 2.224e+00)
+[Step  4010 | t = 4.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2028 | C_L = -0.7773 | dP = 2.5141
+[Reproject-test] step 4010: max|u_new - u| = 1.820e-05 (max|u| = 2.224e+00)
+[Step  4020 | t = 4.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1945 | C_L = -0.6479 | dP = 2.5070
+[Reproject-test] step 4020: max|u_new - u| = 1.946e-05 (max|u| = 2.220e+00)
+[Step  4030 | t = 4.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1840 | C_L = -0.4960 | dP = 2.4954
+[Reproject-test] step 4030: max|u_new - u| = 1.993e-05 (max|u| = 2.214e+00)
+[Step  4040 | t = 4.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1726 | C_L = -0.3267 | dP = 2.4808
+[Reproject-test] step 4040: max|u_new - u| = 1.851e-05 (max|u| = 2.206e+00)
+[Step  4050 | t = 4.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1622 | C_L = -0.1459 | dP = 2.4652
+[Reproject-test] step 4050: max|u_new - u| = 1.756e-05 (max|u| = 2.196e+00)
+[Step  4060 | t = 4.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1540 | C_L = 0.0401 | dP = 2.4506
+[Reproject-test] step 4060: max|u_new - u| = 1.901e-05 (max|u| = 2.184e+00)
+[Step  4070 | t = 4.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1493 | C_L = 0.2245 | dP = 2.4392
+[Reproject-test] step 4070: max|u_new - u| = 2.007e-05 (max|u| = 2.171e+00)
+[Step  4080 | t = 4.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1488 | C_L = 0.4007 | dP = 2.4325
+[Reproject-test] step 4080: max|u_new - u| = 1.979e-05 (max|u| = 2.158e+00)
+[Step  4090 | t = 4.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1524 | C_L = 0.5620 | dP = 2.4316
+[Reproject-test] step 4090: max|u_new - u| = 1.962e-05 (max|u| = 2.172e+00)
+[Step  4100 | t = 4.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1599 | C_L = 0.7025 | dP = 2.4367
+[Reproject-test] step 4100: max|u_new - u| = 1.911e-05 (max|u| = 2.185e+00)
+[Step  4110 | t = 4.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1700 | C_L = 0.8168 | dP = 2.4469
+[Reproject-test] step 4110: max|u_new - u| = 1.845e-05 (max|u| = 2.198e+00)
+[Step  4120 | t = 4.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1814 | C_L = 0.9006 | dP = 2.4610
+[Reproject-test] step 4120: max|u_new - u| = 1.693e-05 (max|u| = 2.210e+00)
+[Step  4130 | t = 4.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1924 | C_L = 0.9509 | dP = 2.4767
+[Reproject-test] step 4130: max|u_new - u| = 1.491e-05 (max|u| = 2.220e+00)
+[Step  4140 | t = 4.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2014 | C_L = 0.9661 | dP = 2.4916
+[Reproject-test] step 4140: max|u_new - u| = 1.293e-05 (max|u| = 2.228e+00)
+[Step  4150 | t = 4.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2071 | C_L = 0.9458 | dP = 2.5037
+[Reproject-test] step 4150: max|u_new - u| = 1.435e-05 (max|u| = 2.233e+00)
+[Step  4160 | t = 4.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2088 | C_L = 0.8911 | dP = 2.5112
+[Reproject-test] step 4160: max|u_new - u| = 1.609e-05 (max|u| = 2.237e+00)
+[Step  4170 | t = 4.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2061 | C_L = 0.8041 | dP = 2.5131
+[Reproject-test] step 4170: max|u_new - u| = 1.895e-05 (max|u| = 2.237e+00)
+[Step  4180 | t = 4.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1996 | C_L = 0.6881 | dP = 2.5093
+[Reproject-test] step 4180: max|u_new - u| = 2.011e-05 (max|u| = 2.235e+00)
+[Step  4190 | t = 4.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1902 | C_L = 0.5473 | dP = 2.5004
+[Reproject-test] step 4190: max|u_new - u| = 2.289e-05 (max|u| = 2.230e+00)
+[Step  4200 | t = 4.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1792 | C_L = 0.3864 | dP = 2.4877
+[Reproject-test] step 4200: max|u_new - u| = 1.958e-05 (max|u| = 2.223e+00)
+[Step  4210 | t = 4.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1683 | C_L = 0.2112 | dP = 2.4730
+[Reproject-test] step 4210: max|u_new - u| = 1.736e-05 (max|u| = 2.214e+00)
+[Step  4220 | t = 4.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1589 | C_L = 0.0276 | dP = 2.4583
+[Reproject-test] step 4220: max|u_new - u| = 1.798e-05 (max|u| = 2.204e+00)
+[Step  4230 | t = 4.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1523 | C_L = -0.1579 | dP = 2.4457
+[Reproject-test] step 4230: max|u_new - u| = 1.883e-05 (max|u| = 2.192e+00)
+[Step  4240 | t = 4.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1496 | C_L = -0.3387 | dP = 2.4370
+[Reproject-test] step 4240: max|u_new - u| = 1.946e-05 (max|u| = 2.178e+00)
+[Step  4250 | t = 4.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1510 | C_L = -0.5083 | dP = 2.4335
+[Reproject-test] step 4250: max|u_new - u| = 1.934e-05 (max|u| = 2.165e+00)
+[Step  4260 | t = 4.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1564 | C_L = -0.6604 | dP = 2.4359
+[Reproject-test] step 4260: max|u_new - u| = 1.958e-05 (max|u| = 2.165e+00)
+[Step  4270 | t = 4.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1651 | C_L = -0.7893 | dP = 2.4439
+[Reproject-test] step 4270: max|u_new - u| = 1.845e-05 (max|u| = 2.179e+00)
+[Step  4280 | t = 4.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1759 | C_L = -0.8903 | dP = 2.4565
+[Reproject-test] step 4280: max|u_new - u| = 1.692e-05 (max|u| = 2.191e+00)
+[Step  4290 | t = 4.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1872 | C_L = -0.9596 | dP = 2.4717
+[Reproject-test] step 4290: max|u_new - u| = 1.555e-05 (max|u| = 2.202e+00)
+[Step  4300 | t = 4.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1975 | C_L = -0.9948 | dP = 2.4874
+[Reproject-test] step 4300: max|u_new - u| = 1.350e-05 (max|u| = 2.211e+00)
+[Step  4310 | t = 4.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2052 | C_L = -0.9947 | dP = 2.5013
+[Reproject-test] step 4310: max|u_new - u| = 1.287e-05 (max|u| = 2.218e+00)
+[Step  4320 | t = 4.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2092 | C_L = -0.9595 | dP = 2.5114
+[Reproject-test] step 4320: max|u_new - u| = 1.492e-05 (max|u| = 2.223e+00)
+[Step  4330 | t = 4.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2089 | C_L = -0.8907 | dP = 2.5162
+[Reproject-test] step 4330: max|u_new - u| = 1.727e-05 (max|u| = 2.225e+00)
+[Step  4340 | t = 4.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2044 | C_L = -0.7908 | dP = 2.5153
+[Reproject-test] step 4340: max|u_new - u| = 1.840e-05 (max|u| = 2.224e+00)
+[Step  4350 | t = 4.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1963 | C_L = -0.6633 | dP = 2.5086
+[Reproject-test] step 4350: max|u_new - u| = 1.986e-05 (max|u| = 2.221e+00)
+[Step  4360 | t = 4.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1858 | C_L = -0.5127 | dP = 2.4973
+[Reproject-test] step 4360: max|u_new - u| = 2.038e-05 (max|u| = 2.215e+00)
+[Step  4370 | t = 4.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1744 | C_L = -0.3443 | dP = 2.4828
+[Reproject-test] step 4370: max|u_new - u| = 1.890e-05 (max|u| = 2.208e+00)
+[Step  4380 | t = 4.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1637 | C_L = -0.1637 | dP = 2.4670
+[Reproject-test] step 4380: max|u_new - u| = 1.789e-05 (max|u| = 2.197e+00)
+[Step  4390 | t = 4.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1553 | C_L = 0.0226 | dP = 2.4522
+[Reproject-test] step 4390: max|u_new - u| = 1.897e-05 (max|u| = 2.186e+00)
+[Step  4400 | t = 4.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1502 | C_L = 0.2080 | dP = 2.4404
+[Reproject-test] step 4400: max|u_new - u| = 2.010e-05 (max|u| = 2.172e+00)
+[Step  4410 | t = 4.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1492 | C_L = 0.3858 | dP = 2.4331
+[Reproject-test] step 4410: max|u_new - u| = 1.996e-05 (max|u| = 2.158e+00)
+[Step  4420 | t = 4.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1525 | C_L = 0.5493 | dP = 2.4317
+[Reproject-test] step 4420: max|u_new - u| = 1.975e-05 (max|u| = 2.171e+00)
+[Step  4430 | t = 4.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1597 | C_L = 0.6924 | dP = 2.4362
+[Reproject-test] step 4430: max|u_new - u| = 1.922e-05 (max|u| = 2.184e+00)
+[Step  4440 | t = 4.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1697 | C_L = 0.8096 | dP = 2.4461
+[Reproject-test] step 4440: max|u_new - u| = 1.861e-05 (max|u| = 2.197e+00)
+[Step  4450 | t = 4.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1810 | C_L = 0.8967 | dP = 2.4599
+[Reproject-test] step 4450: max|u_new - u| = 1.718e-05 (max|u| = 2.209e+00)
+[Step  4460 | t = 4.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1922 | C_L = 0.9504 | dP = 2.4756
+[Reproject-test] step 4460: max|u_new - u| = 1.511e-05 (max|u| = 2.219e+00)
+[Step  4470 | t = 4.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2015 | C_L = 0.9689 | dP = 2.4908
+[Reproject-test] step 4470: max|u_new - u| = 1.319e-05 (max|u| = 2.227e+00)
+[Step  4480 | t = 4.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2076 | C_L = 0.9519 | dP = 2.5033
+[Reproject-test] step 4480: max|u_new - u| = 1.431e-05 (max|u| = 2.233e+00)
+[Step  4490 | t = 4.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2096 | C_L = 0.9001 | dP = 2.5113
+[Reproject-test] step 4490: max|u_new - u| = 1.572e-05 (max|u| = 2.237e+00)
+[Step  4500 | t = 4.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2073 | C_L = 0.8158 | dP = 2.5137
+[Reproject-test] step 4500: max|u_new - u| = 1.842e-05 (max|u| = 2.237e+00)
+[Step  4510 | t = 4.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2011 | C_L = 0.7021 | dP = 2.5104
+[Reproject-test] step 4510: max|u_new - u| = 2.009e-05 (max|u| = 2.235e+00)
+[Step  4520 | t = 4.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1918 | C_L = 0.5630 | dP = 2.5019
+[Reproject-test] step 4520: max|u_new - u| = 2.333e-05 (max|u| = 2.231e+00)
+[Step  4530 | t = 4.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1809 | C_L = 0.4035 | dP = 2.4895
+[Reproject-test] step 4530: max|u_new - u| = 1.983e-05 (max|u| = 2.224e+00)
+[Step  4540 | t = 4.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1698 | C_L = 0.2290 | dP = 2.4748
+[Reproject-test] step 4540: max|u_new - u| = 1.743e-05 (max|u| = 2.215e+00)
+[Step  4550 | t = 4.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1601 | C_L = 0.0455 | dP = 2.4599
+[Reproject-test] step 4550: max|u_new - u| = 1.788e-05 (max|u| = 2.205e+00)
+[Step  4560 | t = 4.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1532 | C_L = -0.1405 | dP = 2.4470
+[Reproject-test] step 4560: max|u_new - u| = 1.887e-05 (max|u| = 2.193e+00)
+[Step  4570 | t = 4.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1501 | C_L = -0.3225 | dP = 2.4378
+[Reproject-test] step 4570: max|u_new - u| = 1.947e-05 (max|u| = 2.180e+00)
+[Step  4580 | t = 4.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1511 | C_L = -0.4938 | dP = 2.4338
+[Reproject-test] step 4580: max|u_new - u| = 1.933e-05 (max|u| = 2.166e+00)
+[Step  4590 | t = 4.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1562 | C_L = -0.6481 | dP = 2.4356
+[Reproject-test] step 4590: max|u_new - u| = 1.967e-05 (max|u| = 2.164e+00)
+[Step  4600 | t = 4.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1647 | C_L = -0.7797 | dP = 2.4432
+[Reproject-test] step 4600: max|u_new - u| = 1.866e-05 (max|u| = 2.177e+00)
+[Step  4610 | t = 4.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1754 | C_L = -0.8838 | dP = 2.4554
+[Reproject-test] step 4610: max|u_new - u| = 1.705e-05 (max|u| = 2.190e+00)
+[Step  4620 | t = 4.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1868 | C_L = -0.9564 | dP = 2.4705
+[Reproject-test] step 4620: max|u_new - u| = 1.577e-05 (max|u| = 2.201e+00)
+[Step  4630 | t = 4.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1972 | C_L = -0.9949 | dP = 2.4864
+[Reproject-test] step 4630: max|u_new - u| = 1.372e-05 (max|u| = 2.210e+00)
+[Step  4640 | t = 4.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2052 | C_L = -0.9982 | dP = 2.5006
+[Reproject-test] step 4640: max|u_new - u| = 1.279e-05 (max|u| = 2.218e+00)
+[Step  4650 | t = 4.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2096 | C_L = -0.9663 | dP = 2.5111
+[Reproject-test] step 4650: max|u_new - u| = 1.485e-05 (max|u| = 2.222e+00)
+[Step  4660 | t = 4.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2097 | C_L = -0.9004 | dP = 2.5165
+[Reproject-test] step 4660: max|u_new - u| = 1.674e-05 (max|u| = 2.225e+00)
+[Step  4670 | t = 4.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2055 | C_L = -0.8031 | dP = 2.5160
+[Reproject-test] step 4670: max|u_new - u| = 1.839e-05 (max|u| = 2.225e+00)
+[Step  4680 | t = 4.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1977 | C_L = -0.6779 | dP = 2.5099
+[Reproject-test] step 4680: max|u_new - u| = 2.001e-05 (max|u| = 2.222e+00)
+[Step  4690 | t = 4.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1874 | C_L = -0.5290 | dP = 2.4989
+[Reproject-test] step 4690: max|u_new - u| = 2.059e-05 (max|u| = 2.216e+00)
+[Step  4700 | t = 4.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1759 | C_L = -0.3617 | dP = 2.4845
+[Reproject-test] step 4700: max|u_new - u| = 1.910e-05 (max|u| = 2.209e+00)
+[Step  4710 | t = 4.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1651 | C_L = -0.1818 | dP = 2.4688
+[Reproject-test] step 4710: max|u_new - u| = 1.805e-05 (max|u| = 2.199e+00)
+[Step  4720 | t = 4.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1563 | C_L = 0.0046 | dP = 2.4537
+[Reproject-test] step 4720: max|u_new - u| = 1.889e-05 (max|u| = 2.187e+00)
+[Step  4730 | t = 4.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1508 | C_L = 0.1907 | dP = 2.4415
+[Reproject-test] step 4730: max|u_new - u| = 2.008e-05 (max|u| = 2.174e+00)
+[Step  4740 | t = 4.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1494 | C_L = 0.3698 | dP = 2.4337
+[Reproject-test] step 4740: max|u_new - u| = 2.009e-05 (max|u| = 2.160e+00)
+[Step  4750 | t = 4.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1524 | C_L = 0.5352 | dP = 2.4316
+[Reproject-test] step 4750: max|u_new - u| = 1.984e-05 (max|u| = 2.169e+00)
+[Step  4760 | t = 4.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1592 | C_L = 0.6807 | dP = 2.4356
+[Reproject-test] step 4760: max|u_new - u| = 1.929e-05 (max|u| = 2.183e+00)
+[Step  4770 | t = 4.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1690 | C_L = 0.8008 | dP = 2.4451
+[Reproject-test] step 4770: max|u_new - u| = 1.873e-05 (max|u| = 2.196e+00)
+[Step  4780 | t = 4.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1803 | C_L = 0.8911 | dP = 2.4587
+[Reproject-test] step 4780: max|u_new - u| = 1.740e-05 (max|u| = 2.208e+00)
+[Step  4790 | t = 4.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1916 | C_L = 0.9481 | dP = 2.4743
+[Reproject-test] step 4790: max|u_new - u| = 1.529e-05 (max|u| = 2.219e+00)
+[Step  4800 | t = 4.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2012 | C_L = 0.9701 | dP = 2.4897
+[Reproject-test] step 4800: max|u_new - u| = 1.343e-05 (max|u| = 2.227e+00)
+[Step  4810 | t = 4.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2076 | C_L = 0.9565 | dP = 2.5026
+[Reproject-test] step 4810: max|u_new - u| = 1.421e-05 (max|u| = 2.233e+00)
+[Step  4820 | t = 4.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2101 | C_L = 0.9079 | dP = 2.5111
+[Reproject-test] step 4820: max|u_new - u| = 1.546e-05 (max|u| = 2.237e+00)
+[Step  4830 | t = 4.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2082 | C_L = 0.8265 | dP = 2.5141
+[Reproject-test] step 4830: max|u_new - u| = 1.773e-05 (max|u| = 2.238e+00)
+[Step  4840 | t = 4.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2022 | C_L = 0.7153 | dP = 2.5113
+[Reproject-test] step 4840: max|u_new - u| = 1.986e-05 (max|u| = 2.236e+00)
+[Step  4850 | t = 4.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1932 | C_L = 0.5783 | dP = 2.5032
+[Reproject-test] step 4850: max|u_new - u| = 2.350e-05 (max|u| = 2.232e+00)
+[Step  4860 | t = 4.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1823 | C_L = 0.4203 | dP = 2.4910
+[Reproject-test] step 4860: max|u_new - u| = 1.987e-05 (max|u| = 2.225e+00)
+[Step  4870 | t = 4.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1711 | C_L = 0.2468 | dP = 2.4764
+[Reproject-test] step 4870: max|u_new - u| = 1.823e-05 (max|u| = 2.216e+00)
+[Step  4880 | t = 4.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1612 | C_L = 0.0636 | dP = 2.4615
+[Reproject-test] step 4880: max|u_new - u| = 1.773e-05 (max|u| = 2.206e+00)
+[Step  4890 | t = 4.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1540 | C_L = -0.1227 | dP = 2.4482
+[Reproject-test] step 4890: max|u_new - u| = 1.887e-05 (max|u| = 2.194e+00)
+[Step  4900 | t = 4.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1504 | C_L = -0.3055 | dP = 2.4386
+[Reproject-test] step 4900: max|u_new - u| = 1.944e-05 (max|u| = 2.181e+00)
+[Step  4910 | t = 4.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1511 | C_L = -0.4783 | dP = 2.4340
+[Reproject-test] step 4910: max|u_new - u| = 1.944e-05 (max|u| = 2.167e+00)
+[Step  4920 | t = 4.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1558 | C_L = -0.6347 | dP = 2.4353
+[Reproject-test] step 4920: max|u_new - u| = 1.973e-05 (max|u| = 2.163e+00)
+[Step  4930 | t = 4.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1640 | C_L = -0.7689 | dP = 2.4423
+[Reproject-test] step 4930: max|u_new - u| = 1.884e-05 (max|u| = 2.176e+00)
+[Step  4940 | t = 4.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1746 | C_L = -0.8760 | dP = 2.4542
+[Reproject-test] step 4940: max|u_new - u| = 1.714e-05 (max|u| = 2.189e+00)
+[Step  4950 | t = 4.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1860 | C_L = -0.9518 | dP = 2.4691
+[Reproject-test] step 4950: max|u_new - u| = 1.596e-05 (max|u| = 2.200e+00)
+[Step  4960 | t = 4.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1966 | C_L = -0.9938 | dP = 2.4850
+[Reproject-test] step 4960: max|u_new - u| = 1.392e-05 (max|u| = 2.210e+00)
+[Step  4970 | t = 4.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2049 | C_L = -1.0006 | dP = 2.4995
+[Reproject-test] step 4970: max|u_new - u| = 1.260e-05 (max|u| = 2.217e+00)
+[Step  4980 | t = 4.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2097 | C_L = -0.9720 | dP = 2.5105
+[Reproject-test] step 4980: max|u_new - u| = 1.464e-05 (max|u| = 2.222e+00)
+[Step  4990 | t = 4.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2102 | C_L = -0.9092 | dP = 2.5165
+[Reproject-test] step 4990: max|u_new - u| = 1.651e-05 (max|u| = 2.225e+00)
+[Step  5000 | t = 5.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2064 | C_L = -0.8148 | dP = 2.5166
+[Reproject-test] step 5000: max|u_new - u| = 1.819e-05 (max|u| = 2.225e+00)
+[Step  5010 | t = 5.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1989 | C_L = -0.6919 | dP = 2.5109
+[Reproject-test] step 5010: max|u_new - u| = 2.043e-05 (max|u| = 2.222e+00)
+[Step  5020 | t = 5.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1887 | C_L = -0.5450 | dP = 2.5003
+[Reproject-test] step 5020: max|u_new - u| = 2.057e-05 (max|u| = 2.217e+00)
+[Step  5030 | t = 5.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1773 | C_L = -0.3791 | dP = 2.4862
+[Reproject-test] step 5030: max|u_new - u| = 1.924e-05 (max|u| = 2.210e+00)
+[Step  5040 | t = 5.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1663 | C_L = -0.1999 | dP = 2.4704
+[Reproject-test] step 5040: max|u_new - u| = 1.823e-05 (max|u| = 2.200e+00)
+[Step  5050 | t = 5.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1572 | C_L = -0.0137 | dP = 2.4552
+[Reproject-test] step 5050: max|u_new - u| = 1.876e-05 (max|u| = 2.188e+00)
+[Step  5060 | t = 5.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1514 | C_L = 0.1729 | dP = 2.4426
+[Reproject-test] step 5060: max|u_new - u| = 2.003e-05 (max|u| = 2.175e+00)
+[Step  5070 | t = 5.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1496 | C_L = 0.3531 | dP = 2.4343
+[Reproject-test] step 5070: max|u_new - u| = 2.018e-05 (max|u| = 2.161e+00)
+[Step  5080 | t = 5.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1521 | C_L = 0.5203 | dP = 2.4316
+[Reproject-test] step 5080: max|u_new - u| = 1.989e-05 (max|u| = 2.168e+00)
+[Step  5090 | t = 5.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1586 | C_L = 0.6681 | dP = 2.4351
+[Reproject-test] step 5090: max|u_new - u| = 1.932e-05 (max|u| = 2.182e+00)
+[Step  5100 | t = 5.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1681 | C_L = 0.7910 | dP = 2.4440
+[Reproject-test] step 5100: max|u_new - u| = 1.882e-05 (max|u| = 2.195e+00)
+[Step  5110 | t = 5.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1794 | C_L = 0.8844 | dP = 2.4573
+[Reproject-test] step 5110: max|u_new - u| = 1.759e-05 (max|u| = 2.207e+00)
+[Step  5120 | t = 5.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1908 | C_L = 0.9449 | dP = 2.4729
+[Reproject-test] step 5120: max|u_new - u| = 1.544e-05 (max|u| = 2.218e+00)
+[Step  5130 | t = 5.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2006 | C_L = 0.9704 | dP = 2.4885
+[Reproject-test] step 5130: max|u_new - u| = 1.366e-05 (max|u| = 2.226e+00)
+[Step  5140 | t = 5.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2074 | C_L = 0.9601 | dP = 2.5017
+[Reproject-test] step 5140: max|u_new - u| = 1.398e-05 (max|u| = 2.233e+00)
+[Step  5150 | t = 5.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2103 | C_L = 0.9149 | dP = 2.5107
+[Reproject-test] step 5150: max|u_new - u| = 1.567e-05 (max|u| = 2.236e+00)
+[Step  5160 | t = 5.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2088 | C_L = 0.8365 | dP = 2.5142
+[Reproject-test] step 5160: max|u_new - u| = 1.732e-05 (max|u| = 2.238e+00)
+[Step  5170 | t = 5.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2032 | C_L = 0.7280 | dP = 2.5120
+[Reproject-test] step 5170: max|u_new - u| = 1.944e-05 (max|u| = 2.236e+00)
+[Step  5180 | t = 5.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1944 | C_L = 0.5932 | dP = 2.5044
+[Reproject-test] step 5180: max|u_new - u| = 2.337e-05 (max|u| = 2.232e+00)
+[Step  5190 | t = 5.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1836 | C_L = 0.4369 | dP = 2.4925
+[Reproject-test] step 5190: max|u_new - u| = 1.989e-05 (max|u| = 2.226e+00)
+[Step  5200 | t = 5.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1723 | C_L = 0.2645 | dP = 2.4780
+[Reproject-test] step 5200: max|u_new - u| = 1.881e-05 (max|u| = 2.217e+00)
+[Step  5210 | t = 5.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1622 | C_L = 0.0819 | dP = 2.4630
+[Reproject-test] step 5210: max|u_new - u| = 1.756e-05 (max|u| = 2.207e+00)
+[Step  5220 | t = 5.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1547 | C_L = -0.1045 | dP = 2.4494
+[Reproject-test] step 5220: max|u_new - u| = 1.885e-05 (max|u| = 2.196e+00)
+[Step  5230 | t = 5.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1507 | C_L = -0.2881 | dP = 2.4394
+[Reproject-test] step 5230: max|u_new - u| = 1.938e-05 (max|u| = 2.183e+00)
+[Step  5240 | t = 5.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1509 | C_L = -0.4623 | dP = 2.4343
+[Reproject-test] step 5240: max|u_new - u| = 1.952e-05 (max|u| = 2.169e+00)
+[Step  5250 | t = 5.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1553 | C_L = -0.6207 | dP = 2.4349
+[Reproject-test] step 5250: max|u_new - u| = 1.976e-05 (max|u| = 2.161e+00)
+[Step  5260 | t = 5.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1632 | C_L = -0.7574 | dP = 2.4414
+[Reproject-test] step 5260: max|u_new - u| = 1.901e-05 (max|u| = 2.175e+00)
+[Step  5270 | t = 5.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1736 | C_L = -0.8673 | dP = 2.4529
+[Reproject-test] step 5270: max|u_new - u| = 1.721e-05 (max|u| = 2.188e+00)
+[Step  5280 | t = 5.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1850 | C_L = -0.9464 | dP = 2.4677
+[Reproject-test] step 5280: max|u_new - u| = 1.614e-05 (max|u| = 2.199e+00)
+[Step  5290 | t = 5.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1958 | C_L = -0.9918 | dP = 2.4836
+[Reproject-test] step 5290: max|u_new - u| = 1.411e-05 (max|u| = 2.209e+00)
+[Step  5300 | t = 5.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2044 | C_L = -1.0021 | dP = 2.4984
+[Reproject-test] step 5300: max|u_new - u| = 1.251e-05 (max|u| = 2.216e+00)
+[Step  5310 | t = 5.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2096 | C_L = -0.9769 | dP = 2.5098
+[Reproject-test] step 5310: max|u_new - u| = 1.428e-05 (max|u| = 2.222e+00)
+[Step  5320 | t = 5.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2105 | C_L = -0.9174 | dP = 2.5163
+[Reproject-test] step 5320: max|u_new - u| = 1.611e-05 (max|u| = 2.225e+00)
+[Step  5330 | t = 5.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2071 | C_L = -0.8258 | dP = 2.5170
+[Reproject-test] step 5330: max|u_new - u| = 1.780e-05 (max|u| = 2.225e+00)
+[Step  5340 | t = 5.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.1999 | C_L = -0.7055 | dP = 2.5118
+[Reproject-test] step 5340: max|u_new - u| = 2.088e-05 (max|u| = 2.223e+00)
+[Step  5350 | t = 5.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1899 | C_L = -0.5607 | dP = 2.5016
+[Reproject-test] step 5350: max|u_new - u| = 2.030e-05 (max|u| = 2.218e+00)
+[Step  5360 | t = 5.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1785 | C_L = -0.3963 | dP = 2.4878
+[Reproject-test] step 5360: max|u_new - u| = 1.958e-05 (max|u| = 2.210e+00)
+[Step  5370 | t = 5.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1674 | C_L = -0.2181 | dP = 2.4721
+[Reproject-test] step 5370: max|u_new - u| = 1.859e-05 (max|u| = 2.201e+00)
+[Step  5380 | t = 5.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1581 | C_L = -0.0322 | dP = 2.4567
+[Reproject-test] step 5380: max|u_new - u| = 1.861e-05 (max|u| = 2.189e+00)
+[Step  5390 | t = 5.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1519 | C_L = 0.1548 | dP = 2.4437
+[Reproject-test] step 5390: max|u_new - u| = 1.995e-05 (max|u| = 2.177e+00)
+[Step  5400 | t = 5.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1496 | C_L = 0.3360 | dP = 2.4349
+[Reproject-test] step 5400: max|u_new - u| = 2.024e-05 (max|u| = 2.163e+00)
+[Step  5410 | t = 5.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1517 | C_L = 0.5048 | dP = 2.4317
+[Reproject-test] step 5410: max|u_new - u| = 1.992e-05 (max|u| = 2.167e+00)
+[Step  5420 | t = 5.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1579 | C_L = 0.6549 | dP = 2.4345
+[Reproject-test] step 5420: max|u_new - u| = 1.939e-05 (max|u| = 2.181e+00)
+[Step  5430 | t = 5.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1672 | C_L = 0.7805 | dP = 2.4430
+[Reproject-test] step 5430: max|u_new - u| = 1.889e-05 (max|u| = 2.194e+00)
+[Step  5440 | t = 5.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1784 | C_L = 0.8770 | dP = 2.4560
+[Reproject-test] step 5440: max|u_new - u| = 1.778e-05 (max|u| = 2.206e+00)
+[Step  5450 | t = 5.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1898 | C_L = 0.9409 | dP = 2.4714
+[Reproject-test] step 5450: max|u_new - u| = 1.562e-05 (max|u| = 2.217e+00)
+[Step  5460 | t = 5.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1999 | C_L = 0.9699 | dP = 2.4871
+[Reproject-test] step 5460: max|u_new - u| = 1.388e-05 (max|u| = 2.226e+00)
+[Step  5470 | t = 5.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2070 | C_L = 0.9632 | dP = 2.5006
+[Reproject-test] step 5470: max|u_new - u| = 1.364e-05 (max|u| = 2.232e+00)
+[Step  5480 | t = 5.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2103 | C_L = 0.9213 | dP = 2.5101
+[Reproject-test] step 5480: max|u_new - u| = 1.567e-05 (max|u| = 2.236e+00)
+[Step  5490 | t = 5.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2092 | C_L = 0.8460 | dP = 2.5142
+[Reproject-test] step 5490: max|u_new - u| = 1.708e-05 (max|u| = 2.238e+00)
+[Step  5500 | t = 5.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2040 | C_L = 0.7402 | dP = 2.5125
+[Reproject-test] step 5500: max|u_new - u| = 1.890e-05 (max|u| = 2.237e+00)
+[Step  5510 | t = 5.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1955 | C_L = 0.6078 | dP = 2.5054
+[Reproject-test] step 5510: max|u_new - u| = 2.296e-05 (max|u| = 2.233e+00)
+[Step  5520 | t = 5.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1848 | C_L = 0.4533 | dP = 2.4939
+[Reproject-test] step 5520: max|u_new - u| = 1.994e-05 (max|u| = 2.226e+00)
+[Step  5530 | t = 5.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1735 | C_L = 0.2822 | dP = 2.4796
+[Reproject-test] step 5530: max|u_new - u| = 1.917e-05 (max|u| = 2.218e+00)
+[Step  5540 | t = 5.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1632 | C_L = 0.1002 | dP = 2.4645
+[Reproject-test] step 5540: max|u_new - u| = 1.765e-05 (max|u| = 2.208e+00)
+[Step  5550 | t = 5.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1554 | C_L = -0.0861 | dP = 2.4507
+[Reproject-test] step 5550: max|u_new - u| = 1.880e-05 (max|u| = 2.197e+00)
+[Step  5560 | t = 5.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1510 | C_L = -0.2704 | dP = 2.4402
+[Reproject-test] step 5560: max|u_new - u| = 1.930e-05 (max|u| = 2.184e+00)
+[Step  5570 | t = 5.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1508 | C_L = -0.4458 | dP = 2.4345
+[Reproject-test] step 5570: max|u_new - u| = 1.959e-05 (max|u| = 2.170e+00)
+[Step  5580 | t = 5.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1548 | C_L = -0.6061 | dP = 2.4346
+[Reproject-test] step 5580: max|u_new - u| = 1.977e-05 (max|u| = 2.160e+00)
+[Step  5590 | t = 5.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1624 | C_L = -0.7453 | dP = 2.4406
+[Reproject-test] step 5590: max|u_new - u| = 1.915e-05 (max|u| = 2.174e+00)
+[Step  5600 | t = 5.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1726 | C_L = -0.8581 | dP = 2.4516
+[Reproject-test] step 5600: max|u_new - u| = 1.726e-05 (max|u| = 2.187e+00)
+[Step  5610 | t = 5.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1840 | C_L = -0.9404 | dP = 2.4662
+[Reproject-test] step 5610: max|u_new - u| = 1.630e-05 (max|u| = 2.198e+00)
+[Step  5620 | t = 5.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1949 | C_L = -0.9892 | dP = 2.4821
+[Reproject-test] step 5620: max|u_new - u| = 1.431e-05 (max|u| = 2.208e+00)
+[Step  5630 | t = 5.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2038 | C_L = -1.0030 | dP = 2.4971
+[Reproject-test] step 5630: max|u_new - u| = 1.269e-05 (max|u| = 2.216e+00)
+[Step  5640 | t = 5.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2093 | C_L = -0.9812 | dP = 2.5089
+[Reproject-test] step 5640: max|u_new - u| = 1.381e-05 (max|u| = 2.221e+00)
+[Step  5650 | t = 5.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2107 | C_L = -0.9250 | dP = 2.5159
+[Reproject-test] step 5650: max|u_new - u| = 1.557e-05 (max|u| = 2.225e+00)
+[Step  5660 | t = 5.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2078 | C_L = -0.8365 | dP = 2.5172
+[Reproject-test] step 5660: max|u_new - u| = 1.801e-05 (max|u| = 2.225e+00)
+[Step  5670 | t = 5.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2009 | C_L = -0.7188 | dP = 2.5126
+[Reproject-test] step 5670: max|u_new - u| = 2.104e-05 (max|u| = 2.223e+00)
+[Step  5680 | t = 5.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1911 | C_L = -0.5761 | dP = 2.5029
+[Reproject-test] step 5680: max|u_new - u| = 1.997e-05 (max|u| = 2.218e+00)
+[Step  5690 | t = 5.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1797 | C_L = -0.4134 | dP = 2.4893
+[Reproject-test] step 5690: max|u_new - u| = 1.965e-05 (max|u| = 2.211e+00)
+[Step  5700 | t = 5.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1685 | C_L = -0.2362 | dP = 2.4737
+[Reproject-test] step 5700: max|u_new - u| = 1.871e-05 (max|u| = 2.202e+00)
+[Step  5710 | t = 5.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1589 | C_L = -0.0507 | dP = 2.4582
+[Reproject-test] step 5710: max|u_new - u| = 1.844e-05 (max|u| = 2.191e+00)
+[Step  5720 | t = 5.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1524 | C_L = 0.1365 | dP = 2.4448
+[Reproject-test] step 5720: max|u_new - u| = 1.984e-05 (max|u| = 2.178e+00)
+[Step  5730 | t = 5.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1497 | C_L = 0.3186 | dP = 2.4356
+[Reproject-test] step 5730: max|u_new - u| = 2.029e-05 (max|u| = 2.164e+00)
+[Step  5740 | t = 5.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1514 | C_L = 0.4890 | dP = 2.4317
+[Reproject-test] step 5740: max|u_new - u| = 1.992e-05 (max|u| = 2.165e+00)
+[Step  5750 | t = 5.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1572 | C_L = 0.6412 | dP = 2.4340
+[Reproject-test] step 5750: max|u_new - u| = 1.948e-05 (max|u| = 2.179e+00)
+[Step  5760 | t = 5.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1662 | C_L = 0.7696 | dP = 2.4420
+[Reproject-test] step 5760: max|u_new - u| = 1.895e-05 (max|u| = 2.193e+00)
+[Step  5770 | t = 5.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1773 | C_L = 0.8691 | dP = 2.4546
+[Reproject-test] step 5770: max|u_new - u| = 1.794e-05 (max|u| = 2.205e+00)
+[Step  5780 | t = 5.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1888 | C_L = 0.9363 | dP = 2.4699
+[Reproject-test] step 5780: max|u_new - u| = 1.587e-05 (max|u| = 2.216e+00)
+[Step  5790 | t = 5.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1991 | C_L = 0.9688 | dP = 2.4856
+[Reproject-test] step 5790: max|u_new - u| = 1.409e-05 (max|u| = 2.225e+00)
+[Step  5800 | t = 5.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,19) | C_D = 3.2066 | C_L = 0.9656 | dP = 2.4995
+[Reproject-test] step 5800: max|u_new - u| = 1.332e-05 (max|u| = 2.232e+00)
+[Step  5810 | t = 5.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2102 | C_L = 0.9272 | dP = 2.5094
+[Reproject-test] step 5810: max|u_new - u| = 1.548e-05 (max|u| = 2.236e+00)
+[Step  5820 | t = 5.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2096 | C_L = 0.8551 | dP = 2.5141
+[Reproject-test] step 5820: max|u_new - u| = 1.675e-05 (max|u| = 2.238e+00)
+[Step  5830 | t = 5.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2048 | C_L = 0.7521 | dP = 2.5130
+[Reproject-test] step 5830: max|u_new - u| = 1.939e-05 (max|u| = 2.237e+00)
+[Step  5840 | t = 5.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1965 | C_L = 0.6221 | dP = 2.5064
+[Reproject-test] step 5840: max|u_new - u| = 2.300e-05 (max|u| = 2.233e+00)
+[Step  5850 | t = 5.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1859 | C_L = 0.4695 | dP = 2.4952
+[Reproject-test] step 5850: max|u_new - u| = 1.987e-05 (max|u| = 2.227e+00)
+[Step  5860 | t = 5.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1746 | C_L = 0.2997 | dP = 2.4811
+[Reproject-test] step 5860: max|u_new - u| = 1.929e-05 (max|u| = 2.219e+00)
+[Step  5870 | t = 5.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1642 | C_L = 0.1186 | dP = 2.4660
+[Reproject-test] step 5870: max|u_new - u| = 1.775e-05 (max|u| = 2.209e+00)
+[Step  5880 | t = 5.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1560 | C_L = -0.0677 | dP = 2.4520
+[Reproject-test] step 5880: max|u_new - u| = 1.873e-05 (max|u| = 2.198e+00)
+[Step  5890 | t = 5.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1513 | C_L = -0.2525 | dP = 2.4411
+[Reproject-test] step 5890: max|u_new - u| = 1.920e-05 (max|u| = 2.185e+00)
+[Step  5900 | t = 5.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1507 | C_L = -0.4291 | dP = 2.4349
+[Reproject-test] step 5900: max|u_new - u| = 1.963e-05 (max|u| = 2.172e+00)
+[Step  5910 | t = 5.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1542 | C_L = -0.5912 | dP = 2.4344
+[Reproject-test] step 5910: max|u_new - u| = 1.976e-05 (max|u| = 2.159e+00)
+[Step  5920 | t = 5.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1615 | C_L = -0.7327 | dP = 2.4398
+[Reproject-test] step 5920: max|u_new - u| = 1.928e-05 (max|u| = 2.172e+00)
+[Step  5930 | t = 5.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1716 | C_L = -0.8484 | dP = 2.4504
+[Reproject-test] step 5930: max|u_new - u| = 1.749e-05 (max|u| = 2.185e+00)
+[Step  5940 | t = 5.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1829 | C_L = -0.9338 | dP = 2.4647
+[Reproject-test] step 5940: max|u_new - u| = 1.645e-05 (max|u| = 2.197e+00)
+[Step  5950 | t = 5.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1940 | C_L = -0.9861 | dP = 2.4806
+[Reproject-test] step 5950: max|u_new - u| = 1.455e-05 (max|u| = 2.207e+00)
+[Step  5960 | t = 5.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2031 | C_L = -1.0034 | dP = 2.4958
+[Reproject-test] step 5960: max|u_new - u| = 1.286e-05 (max|u| = 2.215e+00)
+[Step  5970 | t = 5.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2090 | C_L = -0.9851 | dP = 2.5080
+[Reproject-test] step 5970: max|u_new - u| = 1.348e-05 (max|u| = 2.221e+00)
+[Step  5980 | t = 5.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2108 | C_L = -0.9322 | dP = 2.5155
+[Reproject-test] step 5980: max|u_new - u| = 1.552e-05 (max|u| = 2.224e+00)
+[Step  5990 | t = 5.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2083 | C_L = -0.8467 | dP = 2.5174
+[Reproject-test] step 5990: max|u_new - u| = 1.844e-05 (max|u| = 2.225e+00)
+[Step  6000 | t = 6.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2017 | C_L = -0.7317 | dP = 2.5134
+[Reproject-test] step 6000: max|u_new - u| = 2.093e-05 (max|u| = 2.223e+00)
+[Step  6010 | t = 6.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1922 | C_L = -0.5913 | dP = 2.5041
+[Reproject-test] step 6010: max|u_new - u| = 1.976e-05 (max|u| = 2.219e+00)
+[Step  6020 | t = 6.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1809 | C_L = -0.4303 | dP = 2.4908
+[Reproject-test] step 6020: max|u_new - u| = 1.947e-05 (max|u| = 2.212e+00)
+[Step  6030 | t = 6.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1696 | C_L = -0.2542 | dP = 2.4753
+[Reproject-test] step 6030: max|u_new - u| = 1.859e-05 (max|u| = 2.203e+00)
+[Step  6040 | t = 6.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1598 | C_L = -0.0693 | dP = 2.4596
+[Reproject-test] step 6040: max|u_new - u| = 1.827e-05 (max|u| = 2.192e+00)
+[Step  6050 | t = 6.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1529 | C_L = 0.1181 | dP = 2.4460
+[Reproject-test] step 6050: max|u_new - u| = 1.972e-05 (max|u| = 2.179e+00)
+[Step  6060 | t = 6.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1498 | C_L = 0.3011 | dP = 2.4363
+[Reproject-test] step 6060: max|u_new - u| = 2.032e-05 (max|u| = 2.165e+00)
+[Step  6070 | t = 6.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1511 | C_L = 0.4729 | dP = 2.4319
+[Reproject-test] step 6070: max|u_new - u| = 1.991e-05 (max|u| = 2.164e+00)
+[Step  6080 | t = 6.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1565 | C_L = 0.6272 | dP = 2.4335
+[Reproject-test] step 6080: max|u_new - u| = 1.956e-05 (max|u| = 2.178e+00)
+[Step  6090 | t = 6.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1653 | C_L = 0.7582 | dP = 2.4409
+[Reproject-test] step 6090: max|u_new - u| = 1.902e-05 (max|u| = 2.191e+00)
+[Step  6100 | t = 6.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1762 | C_L = 0.8608 | dP = 2.4532
+[Reproject-test] step 6100: max|u_new - u| = 1.810e-05 (max|u| = 2.204e+00)
+[Step  6110 | t = 6.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1877 | C_L = 0.9313 | dP = 2.4683
+[Reproject-test] step 6110: max|u_new - u| = 1.612e-05 (max|u| = 2.215e+00)
+[Step  6120 | t = 6.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1982 | C_L = 0.9673 | dP = 2.4842
+[Reproject-test] step 6120: max|u_new - u| = 1.429e-05 (max|u| = 2.224e+00)
+[Step  6130 | t = 6.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2060 | C_L = 0.9677 | dP = 2.4983
+[Reproject-test] step 6130: max|u_new - u| = 1.324e-05 (max|u| = 2.231e+00)
+[Step  6140 | t = 6.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2101 | C_L = 0.9326 | dP = 2.5087
+[Reproject-test] step 6140: max|u_new - u| = 1.535e-05 (max|u| = 2.236e+00)
+[Step  6150 | t = 6.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2099 | C_L = 0.8637 | dP = 2.5139
+[Reproject-test] step 6150: max|u_new - u| = 1.679e-05 (max|u| = 2.238e+00)
+[Step  6160 | t = 6.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2055 | C_L = 0.7637 | dP = 2.5134
+[Reproject-test] step 6160: max|u_new - u| = 1.975e-05 (max|u| = 2.237e+00)
+[Step  6170 | t = 6.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1975 | C_L = 0.6361 | dP = 2.5073
+[Reproject-test] step 6170: max|u_new - u| = 2.280e-05 (max|u| = 2.234e+00)
+[Step  6180 | t = 6.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1871 | C_L = 0.4856 | dP = 2.4965
+[Reproject-test] step 6180: max|u_new - u| = 2.056e-05 (max|u| = 2.228e+00)
+[Step  6190 | t = 6.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1758 | C_L = 0.3172 | dP = 2.4826
+[Reproject-test] step 6190: max|u_new - u| = 1.918e-05 (max|u| = 2.220e+00)
+[Step  6200 | t = 6.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1652 | C_L = 0.1369 | dP = 2.4675
+[Reproject-test] step 6200: max|u_new - u| = 1.800e-05 (max|u| = 2.211e+00)
+[Step  6210 | t = 6.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1567 | C_L = -0.0492 | dP = 2.4532
+[Reproject-test] step 6210: max|u_new - u| = 1.864e-05 (max|u| = 2.199e+00)
+[Step  6220 | t = 6.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1516 | C_L = -0.2345 | dP = 2.4420
+[Reproject-test] step 6220: max|u_new - u| = 1.908e-05 (max|u| = 2.187e+00)
+[Step  6230 | t = 6.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1506 | C_L = -0.4122 | dP = 2.4352
+[Reproject-test] step 6230: max|u_new - u| = 1.965e-05 (max|u| = 2.173e+00)
+[Step  6240 | t = 6.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1537 | C_L = -0.5761 | dP = 2.4342
+[Reproject-test] step 6240: max|u_new - u| = 1.974e-05 (max|u| = 2.159e+00)
+[Step  6250 | t = 6.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1607 | C_L = -0.7199 | dP = 2.4390
+[Reproject-test] step 6250: max|u_new - u| = 1.939e-05 (max|u| = 2.171e+00)
+[Step  6260 | t = 6.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1705 | C_L = -0.8383 | dP = 2.4491
+[Reproject-test] step 6260: max|u_new - u| = 1.772e-05 (max|u| = 2.184e+00)
+[Step  6270 | t = 6.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1818 | C_L = -0.9269 | dP = 2.4632
+[Reproject-test] step 6270: max|u_new - u| = 1.659e-05 (max|u| = 2.196e+00)
+[Step  6280 | t = 6.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1929 | C_L = -0.9826 | dP = 2.4790
+[Reproject-test] step 6280: max|u_new - u| = 1.478e-05 (max|u| = 2.206e+00)
+[Step  6290 | t = 6.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2024 | C_L = -1.0033 | dP = 2.4944
+[Reproject-test] step 6290: max|u_new - u| = 1.302e-05 (max|u| = 2.214e+00)
+[Step  6300 | t = 6.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2086 | C_L = -0.9886 | dP = 2.5070
+[Reproject-test] step 6300: max|u_new - u| = 1.311e-05 (max|u| = 2.221e+00)
+[Step  6310 | t = 6.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2109 | C_L = -0.9390 | dP = 2.5150
+[Reproject-test] step 6310: max|u_new - u| = 1.572e-05 (max|u| = 2.224e+00)
+[Step  6320 | t = 6.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2087 | C_L = -0.8566 | dP = 2.5175
+[Reproject-test] step 6320: max|u_new - u| = 1.863e-05 (max|u| = 2.225e+00)
+[Step  6330 | t = 6.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2026 | C_L = -0.7444 | dP = 2.5141
+[Reproject-test] step 6330: max|u_new - u| = 2.058e-05 (max|u| = 2.224e+00)
+[Step  6340 | t = 6.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1932 | C_L = -0.6063 | dP = 2.5052
+[Reproject-test] step 6340: max|u_new - u| = 1.930e-05 (max|u| = 2.220e+00)
+[Step  6350 | t = 6.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1821 | C_L = -0.4471 | dP = 2.4923
+[Reproject-test] step 6350: max|u_new - u| = 1.904e-05 (max|u| = 2.213e+00)
+[Step  6360 | t = 6.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1707 | C_L = -0.2722 | dP = 2.4769
+[Reproject-test] step 6360: max|u_new - u| = 1.825e-05 (max|u| = 2.204e+00)
+[Step  6370 | t = 6.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1607 | C_L = -0.0878 | dP = 2.4611
+[Reproject-test] step 6370: max|u_new - u| = 1.809e-05 (max|u| = 2.193e+00)
+[Step  6380 | t = 6.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1534 | C_L = 0.0996 | dP = 2.4472
+[Reproject-test] step 6380: max|u_new - u| = 1.959e-05 (max|u| = 2.181e+00)
+[Step  6390 | t = 6.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1500 | C_L = 0.2833 | dP = 2.4370
+[Reproject-test] step 6390: max|u_new - u| = 2.033e-05 (max|u| = 2.167e+00)
+[Step  6400 | t = 6.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1508 | C_L = 0.4566 | dP = 2.4320
+[Reproject-test] step 6400: max|u_new - u| = 1.988e-05 (max|u| = 2.162e+00)
+[Step  6410 | t = 6.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1558 | C_L = 0.6129 | dP = 2.4331
+[Reproject-test] step 6410: max|u_new - u| = 1.963e-05 (max|u| = 2.177e+00)
+[Step  6420 | t = 6.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1643 | C_L = 0.7464 | dP = 2.4400
+[Reproject-test] step 6420: max|u_new - u| = 1.910e-05 (max|u| = 2.190e+00)
+[Step  6430 | t = 6.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1751 | C_L = 0.8521 | dP = 2.4518
+[Reproject-test] step 6430: max|u_new - u| = 1.824e-05 (max|u| = 2.203e+00)
+[Step  6440 | t = 6.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1866 | C_L = 0.9259 | dP = 2.4668
+[Reproject-test] step 6440: max|u_new - u| = 1.636e-05 (max|u| = 2.214e+00)
+[Step  6450 | t = 6.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1973 | C_L = 0.9654 | dP = 2.4826
+[Reproject-test] step 6450: max|u_new - u| = 1.448e-05 (max|u| = 2.223e+00)
+[Step  6460 | t = 6.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2054 | C_L = 0.9693 | dP = 2.4970
+[Reproject-test] step 6460: max|u_new - u| = 1.304e-05 (max|u| = 2.231e+00)
+[Step  6470 | t = 6.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2099 | C_L = 0.9377 | dP = 2.5079
+[Reproject-test] step 6470: max|u_new - u| = 1.523e-05 (max|u| = 2.235e+00)
+[Step  6480 | t = 6.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2101 | C_L = 0.8721 | dP = 2.5137
+[Reproject-test] step 6480: max|u_new - u| = 1.666e-05 (max|u| = 2.238e+00)
+[Step  6490 | t = 6.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2061 | C_L = 0.7749 | dP = 2.5137
+[Reproject-test] step 6490: max|u_new - u| = 1.984e-05 (max|u| = 2.237e+00)
+[Step  6500 | t = 6.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1984 | C_L = 0.6499 | dP = 2.5081
+[Reproject-test] step 6500: max|u_new - u| = 2.234e-05 (max|u| = 2.234e+00)
+[Step  6510 | t = 6.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1882 | C_L = 0.5014 | dP = 2.4977
+[Reproject-test] step 6510: max|u_new - u| = 2.102e-05 (max|u| = 2.229e+00)
+[Step  6520 | t = 6.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1769 | C_L = 0.3346 | dP = 2.4840
+[Reproject-test] step 6520: max|u_new - u| = 1.886e-05 (max|u| = 2.221e+00)
+[Step  6530 | t = 6.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1662 | C_L = 0.1551 | dP = 2.4690
+[Reproject-test] step 6530: max|u_new - u| = 1.824e-05 (max|u| = 2.212e+00)
+[Step  6540 | t = 6.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1575 | C_L = -0.0307 | dP = 2.4546
+[Reproject-test] step 6540: max|u_new - u| = 1.853e-05 (max|u| = 2.200e+00)
+[Step  6550 | t = 6.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1520 | C_L = -0.2163 | dP = 2.4429
+[Reproject-test] step 6550: max|u_new - u| = 1.894e-05 (max|u| = 2.188e+00)
+[Step  6560 | t = 6.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1505 | C_L = -0.3952 | dP = 2.4357
+[Reproject-test] step 6560: max|u_new - u| = 1.966e-05 (max|u| = 2.174e+00)
+[Step  6570 | t = 6.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1533 | C_L = -0.5606 | dP = 2.4340
+[Reproject-test] step 6570: max|u_new - u| = 1.970e-05 (max|u| = 2.160e+00)
+[Step  6580 | t = 6.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1599 | C_L = -0.7067 | dP = 2.4383
+[Reproject-test] step 6580: max|u_new - u| = 1.949e-05 (max|u| = 2.170e+00)
+[Step  6590 | t = 6.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1695 | C_L = -0.8279 | dP = 2.4479
+[Reproject-test] step 6590: max|u_new - u| = 1.794e-05 (max|u| = 2.183e+00)
+[Step  6600 | t = 6.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1807 | C_L = -0.9196 | dP = 2.4617
+[Reproject-test] step 6600: max|u_new - u| = 1.671e-05 (max|u| = 2.195e+00)
+[Step  6610 | t = 6.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1919 | C_L = -0.9787 | dP = 2.4774
+[Reproject-test] step 6610: max|u_new - u| = 1.500e-05 (max|u| = 2.205e+00)
+[Step  6620 | t = 6.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2016 | C_L = -1.0029 | dP = 2.4929
+[Reproject-test] step 6620: max|u_new - u| = 1.317e-05 (max|u| = 2.214e+00)
+[Step  6630 | t = 6.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,20) | C_D = 3.2082 | C_L = -0.9917 | dP = 2.5059
+[Reproject-test] step 6630: max|u_new - u| = 1.263e-05 (max|u| = 2.220e+00)
+[Step  6640 | t = 6.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2109 | C_L = -0.9455 | dP = 2.5145
+[Reproject-test] step 6640: max|u_new - u| = 1.576e-05 (max|u| = 2.224e+00)
+[Step  6650 | t = 6.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2092 | C_L = -0.8662 | dP = 2.5175
+[Reproject-test] step 6650: max|u_new - u| = 1.859e-05 (max|u| = 2.225e+00)
+[Step  6660 | t = 6.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2034 | C_L = -0.7568 | dP = 2.5147
+[Reproject-test] step 6660: max|u_new - u| = 2.000e-05 (max|u| = 2.224e+00)
+[Step  6670 | t = 6.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1943 | C_L = -0.6210 | dP = 2.5063
+[Reproject-test] step 6670: max|u_new - u| = 1.862e-05 (max|u| = 2.220e+00)
+[Step  6680 | t = 6.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1832 | C_L = -0.4637 | dP = 2.4937
+[Reproject-test] step 6680: max|u_new - u| = 1.867e-05 (max|u| = 2.214e+00)
+[Step  6690 | t = 6.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1718 | C_L = -0.2901 | dP = 2.4785
+[Reproject-test] step 6690: max|u_new - u| = 1.808e-05 (max|u| = 2.205e+00)
+[Step  6700 | t = 6.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1616 | C_L = -0.1063 | dP = 2.4627
+[Reproject-test] step 6700: max|u_new - u| = 1.790e-05 (max|u| = 2.194e+00)
+[Step  6710 | t = 6.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1540 | C_L = 0.0811 | dP = 2.4485
+[Reproject-test] step 6710: max|u_new - u| = 1.944e-05 (max|u| = 2.182e+00)
+[Step  6720 | t = 6.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1501 | C_L = 0.2655 | dP = 2.4378
+[Reproject-test] step 6720: max|u_new - u| = 2.032e-05 (max|u| = 2.168e+00)
+[Step  6730 | t = 6.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1505 | C_L = 0.4401 | dP = 2.4323
+[Reproject-test] step 6730: max|u_new - u| = 1.984e-05 (max|u| = 2.161e+00)
+[Step  6740 | t = 6.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1551 | C_L = 0.5984 | dP = 2.4327
+[Reproject-test] step 6740: max|u_new - u| = 1.968e-05 (max|u| = 2.175e+00)
+[Step  6750 | t = 6.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1633 | C_L = 0.7344 | dP = 2.4391
+[Reproject-test] step 6750: max|u_new - u| = 1.917e-05 (max|u| = 2.189e+00)
+[Step  6760 | t = 6.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1740 | C_L = 0.8430 | dP = 2.4505
+[Reproject-test] step 6760: max|u_new - u| = 1.837e-05 (max|u| = 2.202e+00)
+[Step  6770 | t = 6.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1855 | C_L = 0.9201 | dP = 2.4652
+[Reproject-test] step 6770: max|u_new - u| = 1.659e-05 (max|u| = 2.213e+00)
+[Step  6780 | t = 6.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1963 | C_L = 0.9631 | dP = 2.4811
+[Reproject-test] step 6780: max|u_new - u| = 1.466e-05 (max|u| = 2.222e+00)
+[Step  6790 | t = 6.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2048 | C_L = 0.9705 | dP = 2.4958
+[Reproject-test] step 6790: max|u_new - u| = 1.273e-05 (max|u| = 2.230e+00)
+[Step  6800 | t = 6.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2097 | C_L = 0.9424 | dP = 2.5070
+[Reproject-test] step 6800: max|u_new - u| = 1.515e-05 (max|u| = 2.235e+00)
+[Step  6810 | t = 6.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2103 | C_L = 0.8801 | dP = 2.5134
+[Reproject-test] step 6810: max|u_new - u| = 1.637e-05 (max|u| = 2.238e+00)
+[Step  6820 | t = 6.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2067 | C_L = 0.7859 | dP = 2.5140
+[Reproject-test] step 6820: max|u_new - u| = 1.970e-05 (max|u| = 2.237e+00)
+[Step  6830 | t = 6.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1993 | C_L = 0.6635 | dP = 2.5089
+[Reproject-test] step 6830: max|u_new - u| = 2.162e-05 (max|u| = 2.235e+00)
+[Step  6840 | t = 6.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1893 | C_L = 0.5171 | dP = 2.4989
+[Reproject-test] step 6840: max|u_new - u| = 2.123e-05 (max|u| = 2.229e+00)
+[Step  6850 | t = 6.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1780 | C_L = 0.3518 | dP = 2.4855
+[Reproject-test] step 6850: max|u_new - u| = 1.889e-05 (max|u| = 2.222e+00)
+[Step  6860 | t = 6.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1672 | C_L = 0.1733 | dP = 2.4705
+[Reproject-test] step 6860: max|u_new - u| = 1.824e-05 (max|u| = 2.213e+00)
+[Step  6870 | t = 6.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1582 | C_L = -0.0122 | dP = 2.4559
+[Reproject-test] step 6870: max|u_new - u| = 1.842e-05 (max|u| = 2.202e+00)
+[Step  6880 | t = 6.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1524 | C_L = -0.1981 | dP = 2.4439
+[Reproject-test] step 6880: max|u_new - u| = 1.893e-05 (max|u| = 2.189e+00)
+[Step  6890 | t = 6.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1505 | C_L = -0.3779 | dP = 2.4362
+[Reproject-test] step 6890: max|u_new - u| = 1.966e-05 (max|u| = 2.176e+00)
+[Step  6900 | t = 6.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1528 | C_L = -0.5450 | dP = 2.4339
+[Reproject-test] step 6900: max|u_new - u| = 1.964e-05 (max|u| = 2.162e+00)
+[Step  6910 | t = 6.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1591 | C_L = -0.6933 | dP = 2.4376
+[Reproject-test] step 6910: max|u_new - u| = 1.957e-05 (max|u| = 2.168e+00)
+[Step  6920 | t = 6.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1684 | C_L = -0.8171 | dP = 2.4468
+[Reproject-test] step 6920: max|u_new - u| = 1.814e-05 (max|u| = 2.182e+00)
+[Step  6930 | t = 6.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1795 | C_L = -0.9120 | dP = 2.4602
+[Reproject-test] step 6930: max|u_new - u| = 1.683e-05 (max|u| = 2.194e+00)
+[Step  6940 | t = 6.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1909 | C_L = -0.9744 | dP = 2.4759
+[Reproject-test] step 6940: max|u_new - u| = 1.521e-05 (max|u| = 2.204e+00)
+[Step  6950 | t = 6.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2007 | C_L = -1.0021 | dP = 2.4915
+[Reproject-test] step 6950: max|u_new - u| = 1.331e-05 (max|u| = 2.213e+00)
+[Step  6960 | t = 6.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2077 | C_L = -0.9944 | dP = 2.5048
+[Reproject-test] step 6960: max|u_new - u| = 1.271e-05 (max|u| = 2.220e+00)
+[Step  6970 | t = 6.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2108 | C_L = -0.9516 | dP = 2.5139
+[Reproject-test] step 6970: max|u_new - u| = 1.566e-05 (max|u| = 2.224e+00)
+[Step  6980 | t = 6.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2095 | C_L = -0.8755 | dP = 2.5175
+[Reproject-test] step 6980: max|u_new - u| = 1.835e-05 (max|u| = 2.225e+00)
+[Step  6990 | t = 6.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2041 | C_L = -0.7689 | dP = 2.5152
+[Reproject-test] step 6990: max|u_new - u| = 1.924e-05 (max|u| = 2.224e+00)
+[Step  7000 | t = 7.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1953 | C_L = -0.6356 | dP = 2.5074
+[Reproject-test] step 7000: max|u_new - u| = 1.870e-05 (max|u| = 2.221e+00)
+[Step  7010 | t = 7.0100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1844 | C_L = -0.4801 | dP = 2.4951
+[Reproject-test] step 7010: max|u_new - u| = 1.911e-05 (max|u| = 2.214e+00)
+[Step  7020 | t = 7.0200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1729 | C_L = -0.3079 | dP = 2.4800
+[Reproject-test] step 7020: max|u_new - u| = 1.778e-05 (max|u| = 2.206e+00)
+[Step  7030 | t = 7.0300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1625 | C_L = -0.1249 | dP = 2.4642
+[Reproject-test] step 7030: max|u_new - u| = 1.770e-05 (max|u| = 2.195e+00)
+[Step  7040 | t = 7.0400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1546 | C_L = 0.0625 | dP = 2.4497
+[Reproject-test] step 7040: max|u_new - u| = 1.933e-05 (max|u| = 2.183e+00)
+[Step  7050 | t = 7.0500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1503 | C_L = 0.2475 | dP = 2.4387
+[Reproject-test] step 7050: max|u_new - u| = 2.030e-05 (max|u| = 2.170e+00)
+[Step  7060 | t = 7.0600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1503 | C_L = 0.4234 | dP = 2.4326
+[Reproject-test] step 7060: max|u_new - u| = 1.983e-05 (max|u| = 2.160e+00)
+[Step  7070 | t = 7.0700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1545 | C_L = 0.5836 | dP = 2.4324
+[Reproject-test] step 7070: max|u_new - u| = 1.972e-05 (max|u| = 2.174e+00)
+[Step  7080 | t = 7.0800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1624 | C_L = 0.7221 | dP = 2.4382
+[Reproject-test] step 7080: max|u_new - u| = 1.923e-05 (max|u| = 2.187e+00)
+[Step  7090 | t = 7.0900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1729 | C_L = 0.8336 | dP = 2.4491
+[Reproject-test] step 7090: max|u_new - u| = 1.849e-05 (max|u| = 2.200e+00)
+[Step  7100 | t = 7.1000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1844 | C_L = 0.9140 | dP = 2.4637
+[Reproject-test] step 7100: max|u_new - u| = 1.681e-05 (max|u| = 2.212e+00)
+[Step  7110 | t = 7.1100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1953 | C_L = 0.9605 | dP = 2.4795
+[Reproject-test] step 7110: max|u_new - u| = 1.484e-05 (max|u| = 2.222e+00)
+[Step  7120 | t = 7.1200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2041 | C_L = 0.9714 | dP = 2.4944
+[Reproject-test] step 7120: max|u_new - u| = 1.274e-05 (max|u| = 2.229e+00)
+[Step  7130 | t = 7.1300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2094 | C_L = 0.9468 | dP = 2.5061
+[Reproject-test] step 7130: max|u_new - u| = 1.488e-05 (max|u| = 2.235e+00)
+[Step  7140 | t = 7.1400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2105 | C_L = 0.8877 | dP = 2.5130
+[Reproject-test] step 7140: max|u_new - u| = 1.635e-05 (max|u| = 2.237e+00)
+[Step  7150 | t = 7.1500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2072 | C_L = 0.7966 | dP = 2.5142
+[Reproject-test] step 7150: max|u_new - u| = 1.938e-05 (max|u| = 2.238e+00)
+[Step  7160 | t = 7.1600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2002 | C_L = 0.6768 | dP = 2.5097
+[Reproject-test] step 7160: max|u_new - u| = 2.069e-05 (max|u| = 2.235e+00)
+[Step  7170 | t = 7.1700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1904 | C_L = 0.5325 | dP = 2.5001
+[Reproject-test] step 7170: max|u_new - u| = 2.204e-05 (max|u| = 2.230e+00)
+[Step  7180 | t = 7.1800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1792 | C_L = 0.3689 | dP = 2.4869
+[Reproject-test] step 7180: max|u_new - u| = 1.906e-05 (max|u| = 2.223e+00)
+[Step  7190 | t = 7.1900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1682 | C_L = 0.1914 | dP = 2.4720
+[Reproject-test] step 7190: max|u_new - u| = 1.799e-05 (max|u| = 2.214e+00)
+[Step  7200 | t = 7.2000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1590 | C_L = 0.0064 | dP = 2.4573
+[Reproject-test] step 7200: max|u_new - u| = 1.828e-05 (max|u| = 2.203e+00)
+[Step  7210 | t = 7.2100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1528 | C_L = -0.1798 | dP = 2.4449
+[Reproject-test] step 7210: max|u_new - u| = 1.895e-05 (max|u| = 2.190e+00)
+[Step  7220 | t = 7.2200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1505 | C_L = -0.3606 | dP = 2.4367
+[Reproject-test] step 7220: max|u_new - u| = 1.964e-05 (max|u| = 2.177e+00)
+[Step  7230 | t = 7.2300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1524 | C_L = -0.5292 | dP = 2.4339
+[Reproject-test] step 7230: max|u_new - u| = 1.957e-05 (max|u| = 2.163e+00)
+[Step  7240 | t = 7.2400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1583 | C_L = -0.6796 | dP = 2.4370
+[Reproject-test] step 7240: max|u_new - u| = 1.964e-05 (max|u| = 2.167e+00)
+[Step  7250 | t = 7.2500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1674 | C_L = -0.8061 | dP = 2.4456
+[Reproject-test] step 7250: max|u_new - u| = 1.834e-05 (max|u| = 2.180e+00)
+[Step  7260 | t = 7.2600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1784 | C_L = -0.9040 | dP = 2.4587
+[Reproject-test] step 7260: max|u_new - u| = 1.693e-05 (max|u| = 2.193e+00)
+[Step  7270 | t = 7.2700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1898 | C_L = -0.9697 | dP = 2.4743
+[Reproject-test] step 7270: max|u_new - u| = 1.542e-05 (max|u| = 2.203e+00)
+[Step  7280 | t = 7.2800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1999 | C_L = -1.0010 | dP = 2.4900
+[Reproject-test] step 7280: max|u_new - u| = 1.345e-05 (max|u| = 2.212e+00)
+[Step  7290 | t = 7.2900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2072 | C_L = -0.9968 | dP = 2.5036
+[Reproject-test] step 7290: max|u_new - u| = 1.288e-05 (max|u| = 2.219e+00)
+[Step  7300 | t = 7.3000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2107 | C_L = -0.9574 | dP = 2.5132
+[Reproject-test] step 7300: max|u_new - u| = 1.541e-05 (max|u| = 2.223e+00)
+[Step  7310 | t = 7.3100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2099 | C_L = -0.8845 | dP = 2.5174
+[Reproject-test] step 7310: max|u_new - u| = 1.793e-05 (max|u| = 2.225e+00)
+[Step  7320 | t = 7.3200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2048 | C_L = -0.7808 | dP = 2.5157
+[Reproject-test] step 7320: max|u_new - u| = 1.832e-05 (max|u| = 2.225e+00)
+[Step  7330 | t = 7.3300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1963 | C_L = -0.6499 | dP = 2.5084
+[Reproject-test] step 7330: max|u_new - u| = 1.942e-05 (max|u| = 2.221e+00)
+[Step  7340 | t = 7.3400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1855 | C_L = -0.4964 | dP = 2.4965
+[Reproject-test] step 7340: max|u_new - u| = 1.987e-05 (max|u| = 2.215e+00)
+[Step  7350 | t = 7.3500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1740 | C_L = -0.3255 | dP = 2.4816
+[Reproject-test] step 7350: max|u_new - u| = 1.844e-05 (max|u| = 2.207e+00)
+[Step  7360 | t = 7.3600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1634 | C_L = -0.1433 | dP = 2.4657
+[Reproject-test] step 7360: max|u_new - u| = 1.751e-05 (max|u| = 2.197e+00)
+[Step  7370 | t = 7.3700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1552 | C_L = 0.0439 | dP = 2.4511
+[Reproject-test] step 7370: max|u_new - u| = 1.922e-05 (max|u| = 2.184e+00)
+[Step  7380 | t = 7.3800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1506 | C_L = 0.2295 | dP = 2.4396
+[Reproject-test] step 7380: max|u_new - u| = 2.027e-05 (max|u| = 2.171e+00)
+[Step  7390 | t = 7.3900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1501 | C_L = 0.4066 | dP = 2.4329
+[Reproject-test] step 7390: max|u_new - u| = 1.995e-05 (max|u| = 2.158e+00)
+[Step  7400 | t = 7.4000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1539 | C_L = 0.5686 | dP = 2.4321
+[Reproject-test] step 7400: max|u_new - u| = 1.978e-05 (max|u| = 2.172e+00)
+[Step  7410 | t = 7.4100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1615 | C_L = 0.7095 | dP = 2.4374
+[Reproject-test] step 7410: max|u_new - u| = 1.928e-05 (max|u| = 2.186e+00)
+[Step  7420 | t = 7.4200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1717 | C_L = 0.8239 | dP = 2.4479
+[Reproject-test] step 7420: max|u_new - u| = 1.860e-05 (max|u| = 2.199e+00)
+[Step  7430 | t = 7.4300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1833 | C_L = 0.9075 | dP = 2.4621
+[Reproject-test] step 7430: max|u_new - u| = 1.702e-05 (max|u| = 2.211e+00)
+[Step  7440 | t = 7.4400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1943 | C_L = 0.9574 | dP = 2.4780
+[Reproject-test] step 7440: max|u_new - u| = 1.500e-05 (max|u| = 2.221e+00)
+[Step  7450 | t = 7.4500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2033 | C_L = 0.9720 | dP = 2.4931
+[Reproject-test] step 7450: max|u_new - u| = 1.298e-05 (max|u| = 2.229e+00)
+[Step  7460 | t = 7.4600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2090 | C_L = 0.9508 | dP = 2.5052
+[Reproject-test] step 7460: max|u_new - u| = 1.448e-05 (max|u| = 2.234e+00)
+[Step  7470 | t = 7.4700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2105 | C_L = 0.8951 | dP = 2.5126
+[Reproject-test] step 7470: max|u_new - u| = 1.614e-05 (max|u| = 2.237e+00)
+[Step  7480 | t = 7.4800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2077 | C_L = 0.8070 | dP = 2.5143
+[Reproject-test] step 7480: max|u_new - u| = 1.903e-05 (max|u| = 2.238e+00)
+[Step  7490 | t = 7.4900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2010 | C_L = 0.6898 | dP = 2.5104
+[Reproject-test] step 7490: max|u_new - u| = 2.017e-05 (max|u| = 2.235e+00)
+[Step  7500 | t = 7.5000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1914 | C_L = 0.5478 | dP = 2.5013
+[Reproject-test] step 7500: max|u_new - u| = 2.284e-05 (max|u| = 2.231e+00)
+[Step  7510 | t = 7.5100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1803 | C_L = 0.3858 | dP = 2.4884
+[Reproject-test] step 7510: max|u_new - u| = 1.957e-05 (max|u| = 2.223e+00)
+[Step  7520 | t = 7.5200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1692 | C_L = 0.2095 | dP = 2.4735
+[Reproject-test] step 7520: max|u_new - u| = 1.750e-05 (max|u| = 2.215e+00)
+[Step  7530 | t = 7.5300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1598 | C_L = 0.0249 | dP = 2.4587
+[Reproject-test] step 7530: max|u_new - u| = 1.813e-05 (max|u| = 2.204e+00)
+[Step  7540 | t = 7.5400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1532 | C_L = -0.1615 | dP = 2.4460
+[Reproject-test] step 7540: max|u_new - u| = 1.895e-05 (max|u| = 2.192e+00)
+[Step  7550 | t = 7.5500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1505 | C_L = -0.3431 | dP = 2.4373
+[Reproject-test] step 7550: max|u_new - u| = 1.960e-05 (max|u| = 2.178e+00)
+[Step  7560 | t = 7.5600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1520 | C_L = -0.5132 | dP = 2.4339
+[Reproject-test] step 7560: max|u_new - u| = 1.949e-05 (max|u| = 2.165e+00)
+[Step  7570 | t = 7.5700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1576 | C_L = -0.6656 | dP = 2.4364
+[Reproject-test] step 7570: max|u_new - u| = 1.970e-05 (max|u| = 2.166e+00)
+[Step  7580 | t = 7.5800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1664 | C_L = -0.7947 | dP = 2.4446
+[Reproject-test] step 7580: max|u_new - u| = 1.853e-05 (max|u| = 2.179e+00)
+[Step  7590 | t = 7.5900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1773 | C_L = -0.8957 | dP = 2.4573
+[Reproject-test] step 7590: max|u_new - u| = 1.702e-05 (max|u| = 2.191e+00)
+[Step  7600 | t = 7.6000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1887 | C_L = -0.9647 | dP = 2.4727
+[Reproject-test] step 7600: max|u_new - u| = 1.561e-05 (max|u| = 2.202e+00)
+[Step  7610 | t = 7.6100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1990 | C_L = -0.9994 | dP = 2.4885
+[Reproject-test] step 7610: max|u_new - u| = 1.357e-05 (max|u| = 2.211e+00)
+[Step  7620 | t = 7.6200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2066 | C_L = -0.9988 | dP = 2.5025
+[Reproject-test] step 7620: max|u_new - u| = 1.292e-05 (max|u| = 2.218e+00)
+[Step  7630 | t = 7.6300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2105 | C_L = -0.9628 | dP = 2.5125
+[Reproject-test] step 7630: max|u_new - u| = 1.504e-05 (max|u| = 2.223e+00)
+[Step  7640 | t = 7.6400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2101 | C_L = -0.8932 | dP = 2.5173
+[Reproject-test] step 7640: max|u_new - u| = 1.735e-05 (max|u| = 2.225e+00)
+[Step  7650 | t = 7.6500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2055 | C_L = -0.7923 | dP = 2.5161
+[Reproject-test] step 7650: max|u_new - u| = 1.844e-05 (max|u| = 2.225e+00)
+[Step  7660 | t = 7.6600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1973 | C_L = -0.6640 | dP = 2.5093
+[Reproject-test] step 7660: max|u_new - u| = 1.986e-05 (max|u| = 2.222e+00)
+[Step  7670 | t = 7.6700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1867 | C_L = -0.5125 | dP = 2.4978
+[Reproject-test] step 7670: max|u_new - u| = 2.037e-05 (max|u| = 2.216e+00)
+[Step  7680 | t = 7.6800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1752 | C_L = -0.3431 | dP = 2.4832
+[Reproject-test] step 7680: max|u_new - u| = 1.889e-05 (max|u| = 2.208e+00)
+[Step  7690 | t = 7.6900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1644 | C_L = -0.1617 | dP = 2.4673
+[Reproject-test] step 7690: max|u_new - u| = 1.788e-05 (max|u| = 2.198e+00)
+[Step  7700 | t = 7.7000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1559 | C_L = 0.0253 | dP = 2.4524
+[Reproject-test] step 7700: max|u_new - u| = 1.910e-05 (max|u| = 2.186e+00)
+[Step  7710 | t = 7.7100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1508 | C_L = 0.2113 | dP = 2.4405
+[Reproject-test] step 7710: max|u_new - u| = 2.022e-05 (max|u| = 2.172e+00)
+[Step  7720 | t = 7.7200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1499 | C_L = 0.3896 | dP = 2.4333
+[Reproject-test] step 7720: max|u_new - u| = 2.004e-05 (max|u| = 2.158e+00)
+[Step  7730 | t = 7.7300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1533 | C_L = 0.5534 | dP = 2.4319
+[Reproject-test] step 7730: max|u_new - u| = 1.984e-05 (max|u| = 2.171e+00)
+[Step  7740 | t = 7.7400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1606 | C_L = 0.6966 | dP = 2.4366
+[Reproject-test] step 7740: max|u_new - u| = 1.931e-05 (max|u| = 2.185e+00)
+[Step  7750 | t = 7.7500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1706 | C_L = 0.8138 | dP = 2.4466
+[Reproject-test] step 7750: max|u_new - u| = 1.869e-05 (max|u| = 2.198e+00)
+[Step  7760 | t = 7.7600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1821 | C_L = 0.9007 | dP = 2.4606
+[Reproject-test] step 7760: max|u_new - u| = 1.722e-05 (max|u| = 2.210e+00)
+[Step  7770 | t = 7.7700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1933 | C_L = 0.9540 | dP = 2.4764
+[Reproject-test] step 7770: max|u_new - u| = 1.516e-05 (max|u| = 2.220e+00)
+[Step  7780 | t = 7.7800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2026 | C_L = 0.9721 | dP = 2.4917
+[Reproject-test] step 7780: max|u_new - u| = 1.321e-05 (max|u| = 2.228e+00)
+[Step  7790 | t = 7.7900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2086 | C_L = 0.9545 | dP = 2.5041
+[Reproject-test] step 7790: max|u_new - u| = 1.435e-05 (max|u| = 2.234e+00)
+[Step  7800 | t = 7.8000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.2106 | C_L = 0.9021 | dP = 2.5121
+[Reproject-test] step 7800: max|u_new - u| = 1.577e-05 (max|u| = 2.237e+00)
+[Step  7810 | t = 7.8100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,4,24) | C_D = 3.2082 | C_L = 0.8171 | dP = 2.5144
+[Reproject-test] step 7810: max|u_new - u| = 1.850e-05 (max|u| = 2.238e+00)
+[Step  7820 | t = 7.8200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2018 | C_L = 0.7027 | dP = 2.5110
+[Reproject-test] step 7820: max|u_new - u| = 2.015e-05 (max|u| = 2.236e+00)
+[Step  7830 | t = 7.8300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1925 | C_L = 0.5629 | dP = 2.5024
+[Reproject-test] step 7830: max|u_new - u| = 2.333e-05 (max|u| = 2.231e+00)
+[Step  7840 | t = 7.8400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1814 | C_L = 0.4026 | dP = 2.4898
+[Reproject-test] step 7840: max|u_new - u| = 1.986e-05 (max|u| = 2.224e+00)
+[Step  7850 | t = 7.8500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1703 | C_L = 0.2275 | dP = 2.4750
+[Reproject-test] step 7850: max|u_new - u| = 1.743e-05 (max|u| = 2.216e+00)
+[Step  7860 | t = 7.8600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1606 | C_L = 0.0434 | dP = 2.4601
+[Reproject-test] step 7860: max|u_new - u| = 1.797e-05 (max|u| = 2.205e+00)
+[Step  7870 | t = 7.8700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1537 | C_L = -0.1431 | dP = 2.4471
+[Reproject-test] step 7870: max|u_new - u| = 1.894e-05 (max|u| = 2.193e+00)
+[Step  7880 | t = 7.8800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,24) | C_D = 3.1506 | C_L = -0.3255 | dP = 2.4379
+[Reproject-test] step 7880: max|u_new - u| = 1.955e-05 (max|u| = 2.180e+00)
+[Step  7890 | t = 7.8900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1517 | C_L = -0.4970 | dP = 2.4340
+[Reproject-test] step 7890: max|u_new - u| = 1.939e-05 (max|u| = 2.166e+00)
+[Step  7900 | t = 7.9000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1568 | C_L = -0.6515 | dP = 2.4359
+[Reproject-test] step 7900: max|u_new - u| = 1.974e-05 (max|u| = 2.164e+00)
+[Step  7910 | t = 7.9100 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1654 | C_L = -0.7831 | dP = 2.4435
+[Reproject-test] step 7910: max|u_new - u| = 1.870e-05 (max|u| = 2.178e+00)
+[Step  7920 | t = 7.9200 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,27) | C_D = 3.1761 | C_L = -0.8870 | dP = 2.4559
+[Reproject-test] step 7920: max|u_new - u| = 1.710e-05 (max|u| = 2.190e+00)
+[Step  7930 | t = 7.9300 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,26) | C_D = 3.1876 | C_L = -0.9594 | dP = 2.4711
+[Reproject-test] step 7930: max|u_new - u| = 1.580e-05 (max|u| = 2.201e+00)
+[Step  7940 | t = 7.9400 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.1980 | C_L = -0.9976 | dP = 2.4870
+[Reproject-test] step 7940: max|u_new - u| = 1.374e-05 (max|u| = 2.211e+00)
+[Step  7950 | t = 7.9500 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2060 | C_L = -1.0004 | dP = 2.5012
+[Reproject-test] step 7950: max|u_new - u| = 1.283e-05 (max|u| = 2.218e+00)
+[Step  7960 | t = 7.9600 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2103 | C_L = -0.9680 | dP = 2.5117
+[Reproject-test] step 7960: max|u_new - u| = 1.490e-05 (max|u| = 2.223e+00)
+[Step  7970 | t = 7.9700 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,4,25) | C_D = 3.2104 | C_L = -0.9015 | dP = 2.5170
+[Reproject-test] step 7970: max|u_new - u| = 1.679e-05 (max|u| = 2.225e+00)
+[Step  7980 | t = 7.9800 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (3,3,24) | C_D = 3.2061 | C_L = -0.8037 | dP = 2.5165
+[Reproject-test] step 7980: max|u_new - u| = 1.844e-05 (max|u| = 2.225e+00)
+[Step  7990 | t = 7.9900 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1982 | C_L = -0.6778 | dP = 2.5102
+[Reproject-test] step 7990: max|u_new - u| = 2.003e-05 (max|u| = 2.222e+00)
+[Step  8000 | t = 8.0000 s] Nodes:  29152 | Elems:  57344 | Iters(u,v,p): (4,3,24) | C_D = 3.1878 | C_L = -0.5284 | dP = 2.4991
+------------------------------------------------------------------------
+  Force statistics over t in [6.50000, 8.00000] s, 2 lift period(s)
+                 value     spread     reference   rel. error   DFG 1996
+    C_D,max       3.21090   8.4e-07     3.22739    -0.511 %   [3.22, 3.24]
+    C_D,min       3.14975   2.3e-06     3.16426    -0.458 %   
+    C_L,max       0.97209   2.1e-05     0.98658    -1.469 %   [0.99, 1.01]
+    C_L,min      -1.00354   9.4e-06    -1.02129    +1.738 %   
+    St            0.30212   1.7e-07     0.30184    +0.093 %   [0.295, 0.305]
+    dp(t0+1/2f)   2.49523   6.6e-07     2.48520    +0.403 %   [2.46, 2.50]
+------------------------------------------------------------------------
+[Timing] 41.86 s wall, 0.00 s in AMR (incl. transfer) | PPE AMG setup 0.01 s | AMG remaps 0 | non-converged linear solves: 0
+[Timing] step phases: momentum 5.93 s (ILU colouring 0.00 s, 4 colours at the end) | pressure 24.47 s (assembly, AMG setup, CG)
+[Timing] AMR sub-phases: adjacency 0.00 s; traces 0.00 s; trace merge 0.00 s; leaf collect 0.00 s; morton keys 0.00 s; morton sort 0.00 s; vertex compaction 0.00 s; mesh fill 0.00 s;
+[Timing] AMG setup phases (all setups): download 0.29 s; D^-1 + rho 1.59 s; aggregation 0.40 s; P smoothing 0.58 s; transpose 0.17 s; Galerkin product 1.23 s; upload 0.47 s; coarse inverse 0.22 s; remap 0.00 s;
+[Output] Wrote ParaView unstructured mesh & flow field to: cylinder_fem_amr_final.vtk
+[Output] Wrote force history to: cylinder_fem_amr_forces.csv

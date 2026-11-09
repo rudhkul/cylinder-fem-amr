@@ -1,0 +1,1 @@
+/home/rudh/Downloads/cylinder_fem_amr_handover/build/cfa_v18b_review --steps 8000 --stats-window 1.5 --uniform-level 4 --outlet dirichlet
